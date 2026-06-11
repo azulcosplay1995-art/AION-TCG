@@ -33,17 +33,17 @@ node aionsim3.js 150                    # regresión motor+IA (desde la raíz de
 Solo necesitas Node (sin `npm install`). Detalle completo en `aion-src/ARCHITECTURE.md`.
 
 ## Estado
-Set 2.1 · 229 cartas · 7 facciones · tutorial interactivo, constructor, sobres, catálogo,
+Set 1.0 · 229 cartas · 7 facciones · tutorial interactivo, constructor, sobres, catálogo,
 glosario, ajustes y campaña. Ver `aion-src/HANDOFF-FABLE5.md` para próximos pasos.
 
 ## Licencia
 Proyecto con **licenciamiento doble**:
 
 - **Código** (`aion-src/`, `aionsim3.js`, `AION TCG.html`): **AGPL-3.0-or-later** — ver
-  [`LICENSE`](LICENSE). Copyleft fuerte: quien lo use o modifique (incluido como servicio
+  [`LICENSE`](LICENSE). Quien lo use o modifique (incluido como servicio
   web) debe publicar su versión bajo la misma licencia y dar atribución.
 - **Contenido creativo** (cartas, lore, diseño, listas en `design/`):
   **CC BY-NC 4.0** — ver [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md). Uso no comercial con atribución.
 
-© 2026 Andrés Azul. (Cambia el nombre/año del titular si lo deseas.)
+© 2026 Andrés Azul.
 Para el texto íntegro de la AGPL-3.0, ver la nota dentro de [`LICENSE`](LICENSE).
