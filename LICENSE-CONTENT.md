@@ -25,5 +25,4 @@ Todo el **contenido creativo** de AION TCG se publica bajo
 > duda sobre qué pieza es "código" y qué es "contenido", pregunta al autor.
 
 ⚠️ Nota: "AION" coincide con marcas registradas de terceros (p. ej. el MMO *Aion*).
-Esta licencia cubre derechos de autor, **no derechos de marca**. Si planeas un uso
-público/comercial, considera un nombre propio distinto y consulta asesoría legal.
+Esta licencia cubre derechos de autor, **no derechos de marca**.
