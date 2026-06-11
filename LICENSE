@@ -15,20 +15,6 @@ detalles.
 
 Deberías haber recibido una copia de la GNU Affero General Public License junto
 con este programa. Si no, visita <https://www.gnu.org/licenses/agpl-3.0.txt>.
-
-------------------------------------------------------------------------------
-NOTA IMPORTANTE — texto completo de la licencia
-------------------------------------------------------------------------------
-La AGPL-3.0 exige incluir el TEXTO ÍNTEGRO de la licencia junto al programa.
-Para dejarlo 100% correcto, sustituye/complementa este archivo con el texto
-oficial completo de la AGPL-3.0. La forma más fácil y exacta:
-
-  • Al crear el repositorio en GitHub, elige "GNU Affero General Public
-    License v3.0" en el selector de licencias: GitHub inserta el texto
-    completo automáticamente (con tu nombre y año), o
-  • Descarga https://www.gnu.org/licenses/agpl-3.0.txt y pégalo bajo estas
-    líneas (o reemplaza este archivo por él).
-
 ------------------------------------------------------------------------------
 Alcance
 ------------------------------------------------------------------------------
