@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AION TCG</title>
+<style>
+:root{
+  --solaris:#f5b942;--neon:#ff3ea5;--gaia:#46d36b;--forja:#ff7733;
+  --conclave:#39d3ff;--vacio:#a45cff;--neutral:#9aa6b2;
+  --pow:#e63950;--hp:#2b8cff;--sync:#ffce3a;
+  --bg0:#070912;--panel:#141b33;--line:#2c3a5e;--gold:#ffd56b;--radius:12px;--shadow:0 6px 14px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Segoe UI',system-ui,sans-serif;
+  background:radial-gradient(1200px 700px at 50% -10%,#1a2750 0%,transparent 60%),
+    radial-gradient(900px 600px at 50% 120%,#2a123f 0%,transparent 60%),var(--bg0);
+  color:#e8eefc;overflow:hidden;user-select:none}
+#app{height:100vh;position:relative}
+.hidden{display:none!important}
+.scrn{position:absolute;inset:0;display:flex;flex-direction:column}
+
+/* ---- Start ---- */
+#start{align-items:center;justify-content:center;text-align:center;gap:16px;
+  background:radial-gradient(800px 500px at 50% 30%,#1b2752,#070912 70%)}
+#start h1{font-size:62px;letter-spacing:10px;font-weight:800;
+  background:linear-gradient(90deg,var(--conclave),var(--neon),var(--solaris));
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:floaty 4s ease-in-out infinite}
+#start .sub{color:#9fb0d6;letter-spacing:4px;font-size:14px;margin-top:-6px}
+#start p{max-width:560px;color:#aab8da;line-height:1.6;font-size:13px}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.menurow{display:flex;gap:16px;margin-top:8px}
+.menugrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px;width:min(560px,92vw);justify-content:center}
+.menugrid .bigbtn{width:100%;min-height:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:8px 14px;font-size:16px;letter-spacing:.4px;line-height:1.15;text-align:center;background:linear-gradient(135deg,#1b2440,#141c30);color:#e7eefc;border:1px solid #2c3a5e;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.menugrid .bigbtn:hover{transform:translateY(-2px);box-shadow:0 0 22px rgba(57,211,255,.35),0 8px 22px rgba(0,0,0,.5);border-color:var(--conclave)}
+.menugrid .hero{grid-column:1/-1;min-height:90px;font-size:21px;font-weight:800;background:linear-gradient(135deg,var(--gold),#ffd98a);color:#1a1205;border:none;box-shadow:0 0 40px rgba(255,213,107,.35),0 10px 28px rgba(0,0,0,.5)}
+.menugrid .hero small{display:block;font-size:12px;font-weight:600;opacity:.8;letter-spacing:1px;margin-top:3px}
+.menugrid .hero:hover{transform:translateY(-3px) scale(1.01);box-shadow:0 0 60px rgba(255,213,107,.6)}
+.menugrid .util{grid-column:1/-1;min-height:46px;font-size:14px;background:linear-gradient(135deg,#161d33,#0f1626);opacity:.95}
+.bigbtn{cursor:pointer;border:none;padding:16px 38px;border-radius:14px;font-size:18px;font-weight:700;
+  letter-spacing:1px;color:#1a1205;background:linear-gradient(135deg,var(--gold),#ffd98a);
+  box-shadow:0 0 30px rgba(57,211,255,.4),0 8px 24px rgba(0,0,0,.5);transition:transform .15s,box-shadow .15s}
+.bigbtn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 50px rgba(255,213,107,.55)}
+.bigbtn.alt{background:linear-gradient(135deg,#1b2440,#141c30);color:#e7eefc;border:1px solid var(--line)}
+.bigbtn.tut{background:linear-gradient(135deg,var(--gaia),#7af0d0)}
+.bigbtn.cat{background:linear-gradient(135deg,var(--vacio),#c79bff)}
+.bigbtn.pack{background:linear-gradient(135deg,var(--gold),#ffd98a);color:#1a1205}
+.menugrid .span2{grid-column:1 / -1;justify-self:center;max-width:270px}
+/* ---- Apertura de sobres ---- */
+#packs{padding:10px 14px;gap:10px}
+#packStage{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-height:0;overflow-y:auto;padding:10px}
+.packbanner{font-size:18px;font-weight:800;letter-spacing:.5px;min-height:26px;text-align:center;color:#cdd8f5}
+#packGrid{display:grid;grid-template-columns:repeat(5,100px);gap:14px 12px;justify-content:center}
+.packcard{position:relative;animation:packReveal .45s cubic-bezier(.3,1.2,.5,1) both}
+.packcard .slotlabel{position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:800;letter-spacing:.5px;padding:1px 7px;border-radius:8px;background:#0e1430;border:1px solid var(--line);color:#9fb0d6;white-space:nowrap;z-index:3}
+.packcard.hit-E .card{box-shadow:0 0 16px #c79bff,0 8px 20px rgba(0,0,0,.6)}
+.packcard.hit-L .card{box-shadow:0 0 20px var(--gold),0 8px 20px rgba(0,0,0,.6)}
+.packcard.hit-P .card{box-shadow:0 0 22px var(--neon),0 8px 20px rgba(0,0,0,.6)}
+@keyframes packReveal{0%{opacity:0;transform:translateY(16px) scale(.86) rotateY(45deg)}100%{opacity:1;transform:none}}
+.packfoot{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;padding:4px 0 8px}
+.packbtn-open{cursor:pointer;border:none;border-radius:12px;padding:13px 30px;font-size:16px;font-weight:800;letter-spacing:.5px;color:#1a1205;background:linear-gradient(135deg,var(--gold),#ffd98a);box-shadow:0 0 26px rgba(255,213,107,.4),0 8px 24px rgba(0,0,0,.5);transition:transform .15s}
+.packbtn-open:hover{transform:translateY(-2px) scale(1.03)}
+.packstat{font-size:12px;color:#9fb0d6}
+.packstat b{color:var(--gold)}
+.packodds{font-size:10px;color:#6b7aa0;text-align:center;margin-top:2px}
+#tutSelect{position:fixed;inset:0;z-index:92;display:none;align-items:center;justify-content:center;background:rgba(5,7,16,.88);backdrop-filter:blur(4px)}
+#tutSelect.show{display:flex}
+#tutSelect .tsbox{background:linear-gradient(165deg,#16261c,#0c1622);border:1px solid var(--gaia);border-radius:18px;padding:24px 30px;text-align:center;max-width:760px;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+#tutSelect h3{color:var(--gaia);letter-spacing:2px;margin-bottom:6px}
+.tssub{color:#bcc9ec;font-size:13px;margin-bottom:16px}
+#tutOpts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.tutCard{cursor:pointer;width:210px;border:1px solid var(--line);background:#13251a;border-radius:14px;padding:16px;text-align:left;transition:all .15s}
+.tutCard:hover{border-color:var(--gaia);transform:translateY(-4px);box-shadow:0 0 24px rgba(70,211,107,.4)}
+.tutCard .tn{font-size:16px;font-weight:800;color:#dfffe9}
+.tutCard .tf{font-size:11px;color:#8fd6a8;margin:2px 0 8px}
+.tutCard .td{font-size:12px;color:#cdd8f5;line-height:1.4}
+#coach{position:fixed;left:14px;bottom:14px;z-index:79;display:none;align-items:flex-end;gap:10px;max-width:380px}
+#coach.show{display:flex}
+.coachAva{font-size:40px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.6));animation:floaty 3s ease-in-out infinite}
+.coachBody{background:linear-gradient(165deg,#1d294f,#121a35);border:2px solid var(--conclave);border-radius:14px;border-bottom-left-radius:4px;padding:13px 15px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+#coachText{font-size:13px;line-height:1.5;color:#e8eefc;margin-bottom:10px}
+#coachText b{color:var(--gold)}
+.coachBtn{cursor:pointer;border:none;border-radius:9px;padding:8px 16px;font-size:13px;font-weight:700;color:#1a1205;background:linear-gradient(135deg,var(--gold),#ffd98a);float:right}
+.diffsel{display:flex;gap:8px;align-items:center;margin-top:6px}
+.diffsel .lab{font-size:12px;color:#9fb0d6;letter-spacing:1px}
+.pill{cursor:pointer;border:1px solid var(--line);background:#1a2342;color:#cdd8f5;padding:8px 16px;
+  border-radius:20px;font-size:13px;font-weight:600;transition:all .15s}
+.pill:hover{border-color:var(--conclave)}
+.pill.on{background:linear-gradient(135deg,var(--gold),#ffd98a);color:#1a1205;border-color:transparent}
+
+/* ---- Builder ---- */
+#builder{padding:10px 14px;gap:8px}
+.bhead{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bhead h2{font-size:22px;letter-spacing:2px;color:var(--gold)}
+.btab{cursor:pointer;border:1px solid var(--line);background:#161d36;padding:7px 13px;border-radius:10px;
+  font-size:13px;font-weight:700;transition:all .12s;color:#cdd8f5}
+.btab:hover{transform:translateY(-1px)}
+.btab.on{box-shadow:0 0 0 2px currentColor inset}
+.btab.f-solaris{color:var(--solaris)}.btab.f-neon{color:var(--neon)}.btab.f-gaia{color:var(--gaia)}
+.btab.f-forja{color:var(--forja)}.btab.f-conclave{color:var(--conclave)}.btab.f-vacio{color:var(--vacio)}
+.btab.f-neutral{color:var(--neutral)}
+.bbody{flex:1;display:grid;grid-template-columns:1fr 320px;gap:12px;min-height:0}
+#cardGrid{overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));
+  gap:10px;padding:8px;background:rgba(10,14,30,.4);border:1px solid var(--line);border-radius:14px;align-content:start}
+.gridcol{display:flex;flex-direction:column;min-height:0;gap:8px}
+#cardGrid{flex:1;min-height:0}
+.filterbar{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.filterbar input,.filterbar select{background:#161d36;color:#cdd8f5;border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:12px;outline:none}
+.filterbar input{flex:1;min-width:130px}
+.filterbar input:focus,.filterbar select:focus{border-color:var(--conclave)}
+.noresult{grid-column:1/-1;color:#9fb0d6;padding:26px;text-align:center;font-size:14px}
+#catalog{padding:10px 14px;gap:10px}
+#catGrid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px;padding:8px;background:rgba(10,14,30,.4);border:1px solid var(--line);border-radius:14px;align-content:start}
+#cardDetail{position:fixed;inset:0;z-index:94;display:none;align-items:center;justify-content:center;background:rgba(5,7,16,.9);backdrop-filter:blur(4px)}
+#cardDetail.show{display:flex}
+#cardDetail .cdbox{display:flex;gap:26px;align-items:center;background:linear-gradient(165deg,#16203f,#0c1226);border:1px solid var(--line);border-radius:18px;padding:26px 32px;max-width:680px;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+#cdCardWrap{flex:0 0 auto;width:180px;display:flex;align-items:center;justify-content:center}
+#cdCard{transform:scale(1.7);transform-origin:center}
+#cdCard.flip{animation:cdFlip .5s ease}
+@keyframes cdFlip{0%{transform:scale(1.7) rotateY(0)}50%{transform:scale(1.7) rotateY(90deg)}100%{transform:scale(1.7) rotateY(0)}}
+.cdinfo{flex:1;min-width:260px}
+#cdName{font-size:20px;font-weight:800;color:var(--gold)}
+#cdMeta{font-size:12px;color:#94a4cd;margin:2px 0 10px}
+#cdPos{font-size:13px;color:#d3ddf6;background:rgba(57,211,255,.12);border-radius:8px;padding:8px 10px;margin-bottom:8px}
+#cdText{font-size:13px;line-height:1.5;color:#dfe8ff;background:rgba(0,0,0,.25);padding:9px 11px;border-radius:10px;min-height:26px}
+#cdKw{margin-top:8px}#cdKw div{font-size:12px;color:#b9c6ea;margin:4px 0;line-height:1.4}#cdKw b{color:var(--gold)}
+.cdbtns{display:flex;gap:10px;margin-top:14px}
+.cdbtns button{cursor:pointer;border:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:700}
+#cdFlip{background:linear-gradient(135deg,var(--solaris),#ffd98a);color:#3a2600}
+.deckpanel{display:flex;flex-direction:column;background:rgba(10,14,30,.55);border:1px solid var(--line);
+  border-radius:14px;padding:12px;min-height:0}
+.deckpanel h3{font-size:15px;letter-spacing:1px;margin-bottom:6px}
+.deckstat{font-size:12px;color:#9fb0d6;margin-bottom:6px}
+.deckstat b{color:#e8eefc}
+.deckstat .bad{color:var(--pow)}
+.deckstat .ok{color:var(--gaia)}
+#deckList{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
+.deckrow{display:flex;align-items:center;gap:6px;font-size:12px;padding:4px 7px;border-radius:8px;
+  background:rgba(255,255,255,.04);cursor:pointer;transition:background .1s}
+.deckrow:hover{background:rgba(230,57,80,.18)}
+.deckrow .qty{font-weight:800;color:var(--gold);min-width:20px}
+.deckrow .em{font-size:15px}
+.deckrow .dn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.deckrow .cc{font-weight:700;color:#7fb0ff}
+.autogen{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.agbtn{cursor:pointer;border:none;padding:6px 9px;border-radius:8px;font-size:11px;font-weight:700;color:#04111f}
+.builder-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.minibtn{cursor:pointer;border:1px solid var(--line);background:#1a2342;color:#cdd8f5;padding:8px 12px;
+  border-radius:9px;font-size:12px;font-weight:600;transition:all .12s}
+.minibtn:hover{border-color:var(--conclave);color:#fff}
+.aiconf{display:flex;gap:6px;align-items:center;font-size:12px;color:#9fb0d6;margin-left:auto}
+.aiconf select{background:#161d36;color:#cdd8f5;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:12px}
+.playbtn{cursor:pointer;border:none;padding:11px 22px;border-radius:11px;font-size:15px;font-weight:800;
+  letter-spacing:1px;color:#1a1205;background:linear-gradient(135deg,var(--gold),#ffd98a);box-shadow:0 0 20px rgba(255,213,107,.4)}
+.playbtn:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+
+/* ---- Card (shared) ---- */
+.card{width:100px;height:140px;border-radius:12px;position:relative;flex:0 0 auto;
+  background:linear-gradient(165deg,#1c2547,#121833);border:2px solid #2c3a66;cursor:pointer;
+  box-shadow:0 6px 14px rgba(0,0,0,.5);transition:transform .18s cubic-bezier(.2,.8,.3,1.2),box-shadow .18s,filter .2s;overflow:hidden}
+.card .art{height:58px;display:flex;align-items:center;justify-content:center;font-size:36px;
+  background:radial-gradient(circle at 50% 40%,rgba(255,255,255,.08),transparent 70%);filter:drop-shadow(0 2px 5px rgba(0,0,0,.6))}
+.card .cost{position:absolute;top:5px;left:5px;width:25px;height:25px;border-radius:50%;display:flex;
+  align-items:center;justify-content:center;font-weight:800;font-size:14px;
+  background:radial-gradient(circle at 35% 30%,#cfe8ff,#3a78d6 60%,#1a3d7a);color:#fff;border:2px solid #eaf4ff;
+  box-shadow:0 0 10px rgba(58,120,214,.7);z-index:3}
+.card .cost.sideB{background:radial-gradient(circle at 35% 30%,#e9e9e9,#8a8a8a 60%,#555);box-shadow:0 0 12px rgba(255,213,107,.6)}
+.card .rar{position:absolute;top:6px;right:6px;font-size:10px;z-index:3}
+.card .name{font-size:9px;font-weight:700;text-align:center;padding:2px 3px;line-height:1.05;
+  background:rgba(8,12,26,.85);border-top:1px solid rgba(255,255,255,.06);min-height:23px;display:flex;align-items:center;justify-content:center}
+.card .kw{display:flex;flex-wrap:wrap;gap:2px;justify-content:center;padding:1px 2px;min-height:12px;background:rgba(8,12,26,.6)}
+.kwchip{font-size:7px;font-weight:700;padding:1px 4px;border-radius:6px;background:rgba(255,255,255,.1);color:#dfe8ff;text-transform:uppercase}
+.kwchip.mutar{background:rgba(70,211,107,.3)}
+.kwchip.glitch{background:rgba(255,62,165,.3)}
+.card .stats{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding:2px 4px;
+  background:linear-gradient(0deg,rgba(4,7,16,.95),transparent)}
+.stat{display:flex;align-items:center;gap:1px;font-weight:800;font-size:12px;text-shadow:0 1px 2px #000;padding:0 3px;border-radius:6px}
+.stat.pow{color:#fff;background:rgba(230,57,80,.85)}
+.stat.hp{color:#fff;background:rgba(43,140,255,.85)}
+.stat.sync{color:#3a2600;background:rgba(255,206,58,.9)}
+/* Indicador de stat modificado: verde = por encima de lo normal, rojo = por debajo / con daño */
+.stat.up{background:rgba(46,211,107,.95)!important;color:#04210f!important;box-shadow:0 0 9px rgba(70,211,107,.7)}
+.stat.down{background:rgba(255,59,80,.97)!important;color:#fff!important;box-shadow:0 0 9px rgba(255,59,80,.6)}
+/* Resalte de cartas con acción disponible (turno del jugador) */
+.card.bcard.actionable{animation:actGlow 1.5s ease-in-out infinite}
+@keyframes actGlow{0%,100%{box-shadow:0 0 0 2px var(--gold),0 0 9px rgba(255,213,107,.45)}50%{box-shadow:0 0 0 2px var(--gold),0 0 20px rgba(255,213,107,.8)}}
+.card .typeband{position:absolute;bottom:25px;left:0;right:0;text-align:center;font-size:7px;letter-spacing:1px;color:#aebbe0;text-transform:uppercase;opacity:.7}
+.f-solaris{border-color:var(--solaris)}.f-neon{border-color:var(--neon)}.f-gaia{border-color:var(--gaia)}
+.f-forja{border-color:var(--forja)}.f-conclave{border-color:var(--conclave)}.f-vacio{border-color:var(--vacio)}.f-neutral{border-color:var(--neutral)}
+.gcard{margin:0 auto;position:relative}
+.gcard .qbadge{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);z-index:5;
+  background:var(--gold);color:#3a2600;font-weight:800;font-size:11px;border-radius:10px;padding:1px 8px;box-shadow:0 2px 6px rgba(0,0,0,.6)}
+.gcard:hover{transform:translateY(-6px) scale(1.06);z-index:10}
+.gcard.maxed{filter:grayscale(.4) brightness(.75)}
+.card.ancla{background:linear-gradient(165deg,#2a2f3d,#15181f);border-style:double;border-width:3px}
+.card.ancla .art{background:repeating-linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.05) 4px,transparent 4px,transparent 8px)}
+.card.ancla .typeband{color:#cfd6e6;opacity:.9;bottom:8px;font-weight:700}
+.card.ancla .name{min-height:34px}
+
+/* ---- Board ---- */
+#board{display:grid;grid-template-rows:auto auto 1fr 1fr auto 1fr 1fr auto;gap:3px;padding:6px 10px}
+.sidebar-row{display:flex;align-items:center;justify-content:center;gap:20px}
+.rowzone{display:flex;gap:10px;justify-content:center;align-items:center;min-height:128px;border-radius:14px;position:relative}
+.rowzone.front{background:linear-gradient(180deg,rgba(40,52,98,.25),rgba(40,52,98,.05))}
+.rowzone.support{background:linear-gradient(180deg,rgba(30,40,80,.12),rgba(30,40,80,.03))}
+.zonelabel{position:absolute;left:10px;top:6px;font-size:10px;letter-spacing:2px;color:#5e6f9c;font-weight:700;text-transform:uppercase;pointer-events:none}
+.slot{width:96px;height:122px;border-radius:12px;border:1.5px dashed #283357;display:flex;align-items:center;justify-content:center;color:#33406b;font-size:11px;flex:0 0 auto}
+.handwrap{display:flex;justify-content:center;align-items:flex-end}
+#playerHand{min-height:148px}#aiHand{min-height:54px}
+/* ===== Encaje en una sola pantalla (alturas menores) ===== */
+@media (max-height:860px){
+  #board{padding:4px 8px;gap:2px}
+  #board .card{width:88px;height:122px}
+  #board .card .art{height:48px;font-size:30px}
+  #board .rowzone{min-height:108px}
+  #board .slot{width:84px;height:104px}
+  #playerHand{min-height:130px}
+  .pa-orb{width:50px;height:50px}.pa-orb .num{font-size:18px}
+  .pinfo{padding:4px 9px;gap:8px}
+}
+@media (max-height:760px){
+  #board .card{width:76px;height:106px}
+  #board .card .art{height:42px;font-size:26px}
+  #board .card .name{min-height:18px;font-size:8px}
+  #board .rowzone{min-height:94px}
+  #board .slot{width:72px;height:90px}
+  #playerHand{min-height:112px}#aiHand{min-height:44px}
+  #board .stat{font-size:10px}
+  .pinfo .ava{width:34px;height:34px;font-size:20px}
+  .pinfo .nm{font-size:11px}.pinfo .nm small{font-size:9px}
+  .counter b{font-size:13px}.counter{min-width:32px}
+  #centerbar{padding:2px 10px}
+  .pbtn{padding:7px 11px;font-size:12px}
+}
+@media (max-height:660px){
+  #board .card{width:66px;height:94px}
+  #board .card .art{height:36px;font-size:21px}
+  #board .rowzone{min-height:82px}
+  #board .slot{width:62px;height:78px}
+  #playerHand{min-height:96px}#aiHand{min-height:38px}
+  .pa-orb{width:42px;height:42px}.pa-orb .num{font-size:15px}.pa-orb .lab{font-size:7px}
+  #turnInfo{font-size:11px}
+}
+.hcard{margin:0 -16px;transform-origin:bottom center}
+.hcard:hover{transform:translateY(-46px) scale(1.16);z-index:30;box-shadow:0 18px 40px rgba(0,0,0,.7)}
+.aicard-back{width:50px;height:74px;border-radius:8px;margin:0 -14px;
+  background:repeating-linear-gradient(45deg,#15203f,#15203f 6px,#1b2950 6px,#1b2950 12px);
+  border:1.5px solid #2c3a66;box-shadow:0 4px 10px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;font-size:18px;color:#3b4a78}
+.bcard{margin:0}.bcard:hover{transform:translateY(-8px) scale(1.05);z-index:20}
+.card.tapped{transform:rotate(82deg) scale(.92);filter:grayscale(.5) brightness(.8)}
+.card.tapped:hover{transform:rotate(82deg) scale(.96)}
+.card.sick::after{content:'💤';position:absolute;top:2px;right:4px;font-size:12px;z-index:4}
+.card.glitched{animation:glitchA .9s infinite}
+.card.glitched::before{content:'⚡GLITCH';position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);
+  text-align:center;font-size:9px;font-weight:800;color:var(--neon);z-index:5;text-shadow:0 0 6px var(--neon);letter-spacing:1px}
+@keyframes glitchA{0%,100%{box-shadow:0 0 0 2px var(--neon)}50%{box-shadow:-2px 0 0 2px var(--conclave),2px 0 0 2px var(--neon)}}
+.card.selectable{animation:selGlow 1s infinite}
+@keyframes selGlow{0%,100%{box-shadow:0 0 0 2px var(--gaia),0 0 14px rgba(70,211,107,.4)}50%{box-shadow:0 0 0 3px var(--gaia),0 0 26px rgba(70,211,107,.9)}}
+.card.target{cursor:crosshair;animation:tgtGlow 1s infinite}
+@keyframes tgtGlow{0%,100%{box-shadow:0 0 0 2px var(--pow),0 0 14px rgba(230,57,80,.5)}50%{box-shadow:0 0 0 3px var(--pow),0 0 30px rgba(230,57,80,1)}}
+.card.healtgt{animation:healGlow 1s infinite}
+@keyframes healGlow{0%,100%{box-shadow:0 0 0 2px var(--gaia),0 0 14px rgba(70,211,107,.4)}50%{box-shadow:0 0 0 3px #7af0d0,0 0 28px rgba(122,240,208,.9)}}
+.card.selected{box-shadow:0 0 0 3px var(--solaris),0 0 26px rgba(245,185,66,.8)!important}
+.card.ascended{animation:ascend 1.1s cubic-bezier(.4,.1,.3,1);border-color:var(--gold)!important;z-index:35}
+@keyframes ascend{0%{transform:rotateY(0) scale(1);filter:brightness(1)}30%{transform:rotateY(90deg) scale(1.35);filter:brightness(2.2)}45%{transform:rotateY(90deg) scale(1.35);filter:brightness(2.2)}70%{transform:rotateY(0) scale(1.18);filter:brightness(1.5)}100%{transform:rotateY(0) scale(1);filter:brightness(1)}}
+.ascGlow{position:absolute;inset:-6px;border-radius:16px;pointer-events:none;box-shadow:0 0 40px 10px var(--gold),inset 0 0 24px var(--gold);opacity:0;z-index:6;animation:ascRing 1.1s ease-out}
+@keyframes ascRing{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+.card.hitshake{animation:hit .35s}
+@keyframes hit{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-4px)}}
+#fx{position:fixed;inset:0;z-index:56;pointer-events:none}
+#flash{position:fixed;inset:0;z-index:57;pointer-events:none;opacity:0;background:#fff;transition:opacity .08s}
+#flash.show{opacity:.85;transition:opacity 0s}
+#board.shaking{animation:boardShake .36s}
+@keyframes boardShake{0%,100%{transform:translate(0,0)}20%{transform:translate(-7px,3px)}40%{transform:translate(6px,-4px)}60%{transform:translate(-5px,-2px)}80%{transform:translate(4px,3px)}}
+.card .holo{position:absolute;inset:0;border-radius:11px;pointer-events:none;z-index:4;mix-blend-mode:screen;
+  background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.4) 46%,rgba(255,255,255,.08) 54%,transparent 68%);
+  background-size:250% 250%;animation:holo 3.4s linear infinite}
+@keyframes holo{0%{background-position:160% 0}100%{background-position:-60% 0}}
+.hcard.playable{animation:playablePulse 1.7s ease-in-out infinite}
+@keyframes playablePulse{0%,100%{box-shadow:0 6px 14px rgba(0,0,0,.5),0 0 0 1px rgba(122,240,208,.35)}50%{box-shadow:0 11px 24px rgba(0,0,0,.5),0 0 20px rgba(122,240,208,.7),0 0 0 2px rgba(122,240,208,.85)}}
+/* === Fase 0: sistema de frames — glow por rareza + frame por tipo === */
+.card.r-R{box-shadow:0 6px 14px rgba(0,0,0,.5),0 0 9px rgba(57,211,255,.30)}
+.card.r-E{box-shadow:0 6px 14px rgba(0,0,0,.5),0 0 13px rgba(196,155,255,.55)}
+.card.r-L{box-shadow:0 7px 16px rgba(0,0,0,.55),0 0 17px rgba(255,213,107,.6)}
+.card.r-P{box-shadow:0 7px 16px rgba(0,0,0,.55),0 0 17px rgba(255,62,165,.55)}
+.card.t-directiva{background:linear-gradient(165deg,#241a40,#14102a)}
+.card.t-directiva .art{background:radial-gradient(circle at 50% 40%,rgba(164,92,255,.16),transparent 70%)}
+.card.t-directiva .typeband{color:#d8c6ff;opacity:.85}
+/* === Fase 2: affordances de acción (qué puede hacer cada entidad) === */
+.card.bcard.act-attack{animation:actGlow 1.5s ease-in-out infinite}            /* dorado: puede atacar/estabilizar */
+.card.bcard.act-ability{animation:abiGlow 1.6s ease-in-out infinite}           /* cian: puede activar efecto */
+@keyframes abiGlow{0%,100%{box-shadow:0 0 0 2px var(--conclave),0 0 9px rgba(57,211,255,.4)}50%{box-shadow:0 0 0 2px var(--conclave),0 0 20px rgba(57,211,255,.85)}}
+.card.bcard.act-move{animation:movGlow 1.8s ease-in-out infinite}              /* verde: solo puede moverse */
+@keyframes movGlow{0%,100%{box-shadow:0 0 0 2px var(--gaia),0 0 8px rgba(70,211,107,.35)}50%{box-shadow:0 0 0 2px var(--gaia),0 0 17px rgba(70,211,107,.7)}}
+.acthints{position:absolute;top:3px;right:3px;display:flex;flex-direction:column;gap:1px;z-index:5;pointer-events:none}
+.acthints span{font-size:9px;line-height:1.1;background:rgba(8,12,26,.82);border-radius:5px;padding:1px 3px}
+/* selección de objetivo: atenuar lo no elegible, resaltar lo válido */
+.card.dimmed{opacity:.3;filter:grayscale(.6) brightness(.7);transition:opacity .15s,filter .15s}
+.card.target,.card.healtgt,.card.selected{z-index:12}
+#targetBanner{position:fixed;top:62px;left:50%;transform:translateX(-50%);z-index:95;display:none;align-items:center;gap:16px;
+  padding:13px 24px;border-radius:14px;font-size:18px;font-weight:800;letter-spacing:.5px;
+  background:linear-gradient(135deg,#1b2440,#141c30);border:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.6)}
+#targetBanner.show{display:flex}
+#targetBanner.enemy{border-color:var(--pow);box-shadow:0 0 26px rgba(230,57,80,.45),0 8px 30px rgba(0,0,0,.6)}
+#targetBanner.ally{border-color:var(--gaia);box-shadow:0 0 26px rgba(70,211,107,.4),0 8px 30px rgba(0,0,0,.6)}
+#targetBanner .tbtext{color:#fff}
+/* recordatorio: aún no cargaste el Timeline este turno */
+.pbtn.hint{animation:chargeHint 1.3s ease-in-out infinite}
+@keyframes chargeHint{0%,100%{box-shadow:0 0 0 1px var(--gold),0 0 6px rgba(255,213,107,.4)}50%{box-shadow:0 0 0 2px var(--gold),0 0 18px rgba(255,213,107,.9)}}
+/* === Fase 2: indicador de turno activo + banner tintado === */
+.pinfo{transition:opacity .25s,box-shadow .25s,border-color .25s}
+.pinfo.active{border-color:var(--gold);box-shadow:0 0 16px rgba(255,213,107,.3)}
+.pinfo.active .ava{border-color:var(--gold);box-shadow:0 0 12px rgba(255,213,107,.45)}
+.pinfo.dim{opacity:.55}
+#banner.you .txt{background-image:linear-gradient(90deg,transparent,var(--gold),transparent)}
+#banner.foe .txt{background-image:linear-gradient(90deg,transparent,#ff7a7a,transparent)}
+/* === Fase 4: spotlight del tutorial === */
+#tutSpot{position:fixed;z-index:77;border-radius:14px;pointer-events:none;display:none;box-shadow:0 0 0 9999px rgba(5,8,18,.74),0 0 0 3px var(--gold),0 0 22px rgba(255,213,107,.7);animation:tutPulse 1.4s ease-in-out infinite}
+#tutSpot.show{display:block}
+@keyframes tutPulse{0%,100%{box-shadow:0 0 0 9999px rgba(5,8,18,.74),0 0 0 3px var(--gold),0 0 14px rgba(255,213,107,.5)}50%{box-shadow:0 0 0 9999px rgba(5,8,18,.74),0 0 0 4px var(--gold),0 0 30px rgba(255,213,107,.95)}}
+/* === Fase 3: curva/composición del mazo === */
+.deckcurve{margin:6px 0 8px;padding:8px 10px;background:rgba(10,14,30,.5);border:1px solid var(--line);border-radius:10px}
+.deckcurve .cvtitle{font-size:11px;color:#9fb0d6;letter-spacing:1px;margin-bottom:4px}
+.deckcurve .cvrow{display:flex;align-items:flex-end;gap:5px;height:60px}
+.deckcurve .cvcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px}
+.deckcurve .cvbar{width:100%;background:linear-gradient(180deg,var(--gold),#b98a2e);border-radius:4px 4px 0 0;transition:height .2s}
+.deckcurve .cvn{font-size:10px;color:#cdd8f5;font-weight:700;min-height:12px}
+.deckcurve .cvx{font-size:10px;color:#8595bd}
+.deckcurve .cvty{font-size:11px;color:#bcc9ec;margin-top:6px;text-align:center}
+
+#playerHand{perspective:1100px}
+.float{position:fixed;z-index:80;font-weight:800;font-size:26px;pointer-events:none;text-shadow:0 2px 6px #000;animation:floatUp 1.1s ease-out forwards}
+@keyframes floatUp{0%{opacity:0;transform:translateY(0) scale(.6)}20%{opacity:1;transform:translateY(-14px) scale(1.2)}100%{opacity:0;transform:translateY(-60px) scale(1)}}
+
+.pinfo{display:flex;align-items:center;gap:12px;padding:5px 12px;border-radius:12px;background:rgba(15,20,40,.6);border:1px solid var(--line)}
+.pinfo .ava{font-size:26px;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#0e1430;border:2px solid var(--line)}
+.pinfo .nm{font-weight:700;font-size:13px}
+.pinfo .nm small{display:block;color:#8595bd;font-weight:400;font-size:10px}
+.counter{display:flex;flex-direction:column;align-items:center;font-size:10px;color:#9fb0d6;min-width:38px}
+.counter b{font-size:16px;color:#e8eefc}
+.counter.clk{cursor:pointer;border-radius:8px;padding:2px 4px;transition:background .12s}
+.counter.clk:hover{background:rgba(57,211,255,.15);color:#fff}
+#voidView{position:fixed;inset:0;z-index:88;display:none;align-items:center;justify-content:center;background:rgba(5,7,16,.8);backdrop-filter:blur(3px)}
+#voidView.show{display:flex}
+#voidView .vbox{background:linear-gradient(165deg,#16203f,#0c1226);border:1px solid var(--line);border-radius:18px;padding:20px 24px;max-width:680px;max-height:82vh;display:flex;flex-direction:column;align-items:center;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+#voidView h3{color:var(--gold);letter-spacing:2px;margin-bottom:14px}
+#voidList{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px;overflow-y:auto;width:100%;padding:4px;justify-items:center}
+#voidList .empty{color:#9fb0d6;font-size:14px;padding:30px}
+.ascLabel{position:fixed;z-index:82;transform:translate(-50%,-100%);font-weight:800;font-size:18px;letter-spacing:2px;
+  color:var(--gold);text-shadow:0 0 14px var(--gold),0 2px 4px #000;pointer-events:none;white-space:nowrap;animation:ascLab 1.4s ease-out forwards}
+@keyframes ascLab{0%{opacity:0;transform:translate(-50%,-60%) scale(.7)}25%{opacity:1;transform:translate(-50%,-120%) scale(1.15)}100%{opacity:0;transform:translate(-50%,-180%) scale(1)}}
+.aether-pip{display:inline-flex;gap:3px;flex-wrap:wrap;max-width:120px}
+.pip{width:10px;height:10px;border-radius:50%;background:#2a3559;border:1px solid #3a4775}
+.pip.full{background:radial-gradient(circle at 30% 30%,#bff2ff,var(--conclave));box-shadow:0 0 8px var(--conclave);border:none}
+.pa-orb{display:flex;flex-direction:column;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;
+  font-weight:800;background:radial-gradient(circle at 35% 30%,#ffe9a8,var(--gold) 55%,#b8862a);color:#3a2600;box-shadow:0 0 22px rgba(255,213,107,.55)}
+.pa-orb .num{font-size:22px;line-height:1}.pa-orb .lab{font-size:8px}
+.pa-ring{border-radius:50%;padding:4px;background:conic-gradient(var(--gold) 0deg,#2a3559 0deg);display:flex;align-items:center;justify-content:center;transition:background .4s}
+.emoteBubble{position:fixed;z-index:84;transform:translate(-50%,-100%);background:#fff;color:#1a2342;font-weight:700;font-size:14px;padding:6px 12px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.5);pointer-events:none;white-space:nowrap;animation:emotePop 1.8s ease forwards}
+.emoteBubble::after{content:'';position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border:6px solid transparent;border-top-color:#fff}
+@keyframes emotePop{0%{opacity:0;transform:translate(-50%,-80%) scale(.6)}15%{opacity:1;transform:translate(-50%,-112%) scale(1.1)}30%{transform:translate(-50%,-100%) scale(1)}85%{opacity:1}100%{opacity:0;transform:translate(-50%,-122%)}}
+#emoteBar{position:fixed;right:60px;bottom:140px;z-index:56;display:none;gap:6px;background:rgba(10,16,34,.94);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 8px 20px rgba(0,0,0,.5)}
+#emoteBar.show{display:flex}
+#emoteBar button{cursor:pointer;border:none;background:#1a2342;border-radius:8px;font-size:20px;padding:4px 9px;transition:background .12s}
+#emoteBar button:hover{background:#27345e}
+.pa-orb.pulse{animation:paPulse .6s}
+@keyframes paPulse{0%{transform:scale(1)}40%{transform:scale(1.28)}100%{transform:scale(1)}}
+#centerbar{display:flex;align-items:center;justify-content:space-between;padding:3px 14px;
+  background:linear-gradient(90deg,transparent,rgba(20,27,51,.7),transparent);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#turnInfo{font-size:13px;color:#bcc9ec}#turnInfo b{color:var(--gold)}
+.phasebtns{display:flex;gap:8px}
+.pbtn{cursor:pointer;border:1px solid var(--line);background:#1a2342;color:#cdd8f5;padding:9px 15px;border-radius:10px;font-size:13px;font-weight:600;transition:all .15s}
+.pbtn:hover{background:#243056;border-color:var(--conclave);color:#fff}
+.pbtn.end{background:linear-gradient(135deg,var(--gold),#ffd98a);color:#1a1205;border:none}
+.pbtn:disabled{opacity:.35;cursor:not-allowed}
+
+/* preview */
+#preview{position:fixed;left:0;top:0;width:240px;z-index:130;pointer-events:none;
+  background:linear-gradient(165deg,#16203f,#0c1226);border:1px solid var(--line);border-radius:16px;padding:13px;
+  box-shadow:0 20px 50px rgba(0,0,0,.7);display:none}
+#preview.show{display:block}
+#preview .ptitle{font-size:16px;font-weight:800}
+#preview .pmeta{font-size:11px;color:#94a4cd;margin-bottom:6px}
+#preview .pbig{font-size:50px;text-align:center;margin:4px 0}
+#preview .pstats{display:flex;justify-content:center;gap:10px;margin:6px 0}
+#preview .pstats .s{padding:3px 9px;border-radius:8px;font-weight:800;font-size:13px}
+#preview .ptext{font-size:12px;line-height:1.5;color:#d3ddf6;background:rgba(0,0,0,.25);padding:8px 10px;border-radius:10px;margin-top:4px;min-height:24px}
+#preview .pkw{margin-top:6px}
+#preview .pkw div{font-size:11px;color:#b9c6ea;margin:4px 0;line-height:1.4}
+#preview .pkw b{color:var(--gold)}
+/* Solón: preview de la carta del tope del mazo (revelada) */
+#solonPeek{position:fixed;left:12px;top:50%;transform:translateY(-50%);z-index:58;display:none;flex-direction:column;align-items:center;gap:7px;width:116px}
+#solonPeek.show{display:flex}
+#solonPeek .splabel{font-size:10px;color:var(--conclave);letter-spacing:.5px;text-align:center;font-weight:800;line-height:1.3;text-shadow:0 1px 3px #000}
+#solonPeek .spwrap{position:relative;filter:drop-shadow(0 0 12px rgba(57,211,255,.5))}
+#solonPeek .spwrap::after{content:'';position:absolute;inset:-3px;border-radius:14px;border:2px solid var(--conclave);opacity:.6;pointer-events:none;animation:floaty 3s ease-in-out infinite}
+#solonPeek .spplay{cursor:pointer;border:none;border-radius:9px;padding:7px 8px;font-size:11px;font-weight:800;width:100%;color:#1a1205;background:linear-gradient(135deg,var(--gold),#ffd98a);box-shadow:0 4px 12px rgba(0,0,0,.5)}
+#solonPeek .spplay:disabled{opacity:.45;cursor:default;background:#2a3559;color:#9fb0d6;box-shadow:none}
+
+/* action menu */
+#actionMenu{position:fixed;z-index:70;background:linear-gradient(165deg,#1d294f,#121a35);border:1px solid var(--conclave);
+  border-radius:12px;padding:8px;display:none;flex-direction:column;gap:6px;box-shadow:0 12px 30px rgba(0,0,0,.6)}
+#actionMenu.show{display:flex}
+.amBtn{cursor:pointer;border:none;border-radius:9px;padding:9px 16px;font-size:13px;font-weight:700;color:#fff;background:#27345e;transition:all .12s;text-align:left;white-space:nowrap}
+.amBtn:hover{background:#33457a;transform:translateX(2px)}
+.amBtn.play{background:linear-gradient(135deg,var(--gold),#ffd98a);color:#04111f}
+.amBtn.stab{background:linear-gradient(135deg,#d6a52a,var(--sync));color:#3a2600}
+.amBtn.atk{background:linear-gradient(135deg,#c02038,var(--pow))}
+.amBtn.tl{background:linear-gradient(135deg,#6a3dff,#a45cff)}
+.amBtn.cancel{background:#2a3050;color:#aab}
+.amBtn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.amBtn small{display:block;font-weight:400;font-size:10px;opacity:.8}
+
+/* mutar modal */
+#mutar{position:fixed;inset:0;z-index:85;display:none;align-items:center;justify-content:center;background:rgba(5,7,16,.7);backdrop-filter:blur(3px)}
+#mutar.show{display:flex}
+#mutar .mbox{background:linear-gradient(165deg,#16261c,#0c1622);border:2px solid var(--gaia);border-radius:18px;padding:22px 26px;text-align:center;box-shadow:0 0 40px rgba(70,211,107,.4)}
+#mutar h3{color:var(--gaia);letter-spacing:2px;margin-bottom:4px}
+#mutar .mname{color:#cfe;font-size:13px;margin-bottom:14px}
+#mutar .mopts{display:flex;gap:12px;justify-content:center}
+.mopt{cursor:pointer;border:1px solid var(--line);background:#13251a;color:#dfffe9;padding:14px 18px;border-radius:12px;
+  font-size:13px;font-weight:600;max-width:200px;transition:all .12s}
+.mopt:hover{border-color:var(--gaia);transform:translateY(-3px);box-shadow:0 0 20px rgba(70,211,107,.4)}
+#reactWin{position:fixed;inset:0;z-index:86;display:none;align-items:center;justify-content:center;background:rgba(5,7,16,.72);backdrop-filter:blur(3px)}
+#reactWin.show{display:flex}
+#reactWin .rbox{background:linear-gradient(165deg,#2a230f,#161020);border:2px solid var(--sync);border-radius:18px;padding:22px 26px;text-align:center;box-shadow:0 0 40px rgba(255,206,58,.4);max-width:560px}
+#reactWin h3{color:var(--sync);letter-spacing:2px;margin-bottom:4px}
+#reactWin .rname{color:#ffeab0;font-size:13px;margin-bottom:14px}
+#reactWin .ropts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.ropt{cursor:pointer;border:1px solid var(--line);background:#241d10;color:#ffe9b8;padding:12px 16px;border-radius:12px;font-size:12.5px;font-weight:600;max-width:200px;transition:all .12s;text-align:left}
+.ropt:hover{border-color:var(--sync);transform:translateY(-3px);box-shadow:0 0 20px rgba(255,206,58,.4)}
+.ropt small{display:block;font-weight:400;font-size:10px;opacity:.85;margin-top:3px}
+.ropt.pass{background:#1c2440;color:#9fb0d6}.ropt.pass:hover{border-color:var(--conclave);box-shadow:0 0 14px rgba(57,211,255,.3)}
+#peekWin{position:fixed;inset:0;z-index:89;display:none;align-items:center;justify-content:center;background:rgba(5,7,16,.8);backdrop-filter:blur(3px)}
+#peekWin.show{display:flex}
+#peekWin .pkbox{background:linear-gradient(165deg,#16203f,#0c1226);border:2px solid var(--conclave);border-radius:18px;padding:22px 26px;text-align:center;box-shadow:0 0 44px rgba(57,211,255,.35);max-width:340px}
+#peekWin h3{color:var(--conclave);letter-spacing:2px;margin-bottom:6px}
+#peekWin .pksub{color:#bcc9ec;font-size:12.5px;line-height:1.5;margin-bottom:14px}
+#peekWin #peekCard{margin:0 auto 16px}
+#peekWin .pkopts{display:flex;gap:12px;justify-content:center}
+.pkbtn{cursor:pointer;border:none;border-radius:11px;padding:12px 18px;font-size:14px;font-weight:700;color:#04111f;background:linear-gradient(135deg,var(--gold),#ffd98a);transition:transform .12s}
+.pkbtn:hover{transform:translateY(-2px)}
+.pkbtn.alt{background:linear-gradient(135deg,#6a3dff,#a45cff);color:#fff}
+#setupChoice,#mulliganView{position:fixed;inset:0;z-index:92;display:none;align-items:center;justify-content:center;background:rgba(5,7,16,.85);backdrop-filter:blur(4px)}
+#setupChoice.show,#mulliganView.show{display:flex}
+#setupChoice .sbox,#mulliganView .mvbox{background:linear-gradient(165deg,#16203f,#0c1226);border:1px solid var(--line);border-radius:18px;padding:24px 30px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.7)}
+#setupChoice h3,#mulliganView h3{color:var(--gold);letter-spacing:3px;margin-bottom:16px}
+.schoice{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.schbtn{cursor:pointer;border:1px solid var(--line);background:#1d294f;color:#e8eefc;padding:16px 24px;border-radius:14px;font-size:15px;font-weight:700;transition:all .15s}
+.schbtn:hover{border-color:var(--conclave);transform:translateY(-3px);box-shadow:0 0 22px rgba(57,211,255,.4)}
+.schbtn.rnd:hover{border-color:var(--solaris);box-shadow:0 0 22px rgba(245,185,66,.4)}
+.snote{margin-top:14px;color:#9fb0d6;font-size:12px}
+.mvsub{color:#bcc9ec;font-size:13px;margin-bottom:14px}
+#mullGrid{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;max-width:780px}
+#mullGrid .gcard.mullsel{filter:brightness(.65)}
+.mulltip{position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:9px;font-weight:700;background:var(--gold);color:#3a2600;border-radius:8px;padding:1px 6px;box-shadow:0 2px 6px rgba(0,0,0,.5);z-index:6}
+#mullGrid .gcard.mullsel{box-shadow:0 0 0 3px var(--neon),0 0 20px rgba(255,62,165,.6)}
+.mullx{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:30px;color:var(--neon);text-shadow:0 0 10px #000;z-index:6;pointer-events:none}
+
+/* toast / banner / end / help */
+#toast{position:fixed;top:80px;left:50%;transform:translateX(-50%);z-index:75;display:flex;flex-direction:column;gap:6px;align-items:center;pointer-events:none}
+.tmsg{background:rgba(10,16,34,.92);border:1px solid var(--line);padding:8px 18px;border-radius:20px;font-size:13px;color:#dfe8ff;
+  box-shadow:0 6px 18px rgba(0,0,0,.5);animation:tIn .3s,tOut .4s 2.1s forwards;border-left:3px solid var(--conclave)}
+@keyframes tIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1}}
+@keyframes tOut{to{opacity:0;transform:translateY(-10px)}}
+#banner{position:fixed;inset:0;z-index:78;display:none;align-items:center;justify-content:center;pointer-events:none}
+#banner.show{display:flex}
+#banner .txt{font-size:46px;font-weight:800;letter-spacing:8px;background:linear-gradient(90deg,transparent,#fff,transparent);
+  background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bannerSweep 1.4s ease}
+@keyframes bannerSweep{0%{opacity:0;transform:scale(.8);background-position:200% 0}30%,70%{opacity:1}100%{opacity:0;transform:scale(1.1);background-position:-100% 0}}
+#endover{position:absolute;inset:0;z-index:90;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(5,7,16,.9);backdrop-filter:blur(5px)}
+#endover.show{display:flex}
+#endover.win{background:radial-gradient(900px 600px at 50% 35%,rgba(60,46,10,.6),rgba(5,7,16,.93) 70%)}
+#endover.lose{background:radial-gradient(900px 600px at 50% 35%,rgba(60,12,18,.5),rgba(5,7,16,.94) 70%)}
+#endover h2{font-size:58px;letter-spacing:6px;font-weight:800}
+#endover.win h2{color:var(--gold);text-shadow:0 0 50px rgba(255,213,107,.6);animation:endTitleWin .9s cubic-bezier(.2,.8,.3,1.3) both}
+#endover.lose h2{color:var(--pow);animation:endTitleLose 1s ease both}
+@keyframes endTitleWin{0%{opacity:0;transform:scale(.5) rotate(-6deg)}55%{transform:scale(1.18) rotate(2deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes endTitleLose{0%{opacity:0;transform:translateY(-18px)}60%{opacity:1}80%{transform:translateY(3px)}100%{transform:translateY(0)}}
+#endover p{color:#bcc9ec;font-size:15px}
+/* barra comparativa de PA (tú vs IA) */
+#endPAbar{width:min(420px,86vw);display:flex;flex-direction:column;gap:9px;margin:2px 0 2px}
+#endPAbar .pabrow{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700}
+#endPAbar .pabname{width:46px;flex:0 0 auto;text-align:right;color:#cdd8f5}
+#endPAbar .pabtrack{flex:1;height:16px;border-radius:9px;background:#101730;border:1px solid #2c3a5e;overflow:hidden;position:relative}
+#endPAbar .pabfill{height:100%;width:0;border-radius:9px;transition:width 1.05s cubic-bezier(.2,.85,.25,1)}
+#endPAbar .pabfill.you{background:linear-gradient(90deg,#b8862a,var(--gold))}
+#endPAbar .pabfill.foe{background:linear-gradient(90deg,#7a2230,var(--pow))}
+#endPAbar .pabval{width:54px;flex:0 0 auto;color:#e8eefc}
+#endPAbar .pabgoal{font-size:10px;color:#8595bd;text-align:center;letter-spacing:.5px}
+/* resumen de travesía (campaña) */
+#endRunSummary{display:none;width:min(440px,88vw);background:linear-gradient(165deg,#16203f,#0c1226);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+#endRunSummary.show{display:block}
+#endRunSummary .rsh{font-size:13px;font-weight:800;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;text-align:center}
+#endRunSummary .rsrow{display:flex;justify-content:space-between;font-size:13px;color:#cdd8f5;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+#endRunSummary .rsrow b{color:#e8eefc}
+#endRunSummary .rsrelics{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;justify-content:center}
+#endRunSummary .rsrelics span{font-size:18px}
+.helpbtn{position:fixed;bottom:12px;right:14px;z-index:55;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#1a2342;color:#bcc9ec;font-size:17px;cursor:pointer}
+.helpbtn:hover{border-color:var(--conclave);color:#fff}
+#help{position:fixed;inset:0;z-index:95;display:none;align-items:center;justify-content:center;background:rgba(5,7,16,.9);backdrop-filter:blur(3px)}
+#help.show{display:flex}
+#help .box{max-width:640px;max-height:84vh;overflow:auto;background:linear-gradient(165deg,#16203f,#0c1226);border:1px solid var(--line);border-radius:18px;padding:24px 30px}
+#help h2{color:var(--gold);margin-bottom:10px}
+#help h3{color:var(--conclave);margin:14px 0 6px;font-size:15px}
+#help p,#help li{font-size:13px;line-height:1.55;color:#cdd8f5}
+#help ul{margin-left:18px;margin-top:4px}#help b{color:#fff}
+.closebtn{cursor:pointer;margin-top:14px;border:none;background:var(--conclave);color:#04111f;padding:10px 26px;border-radius:10px;font-weight:700}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- START -->
+  <div id="start" class="scrn">
+    <h1>AION</h1>
+    <div class="sub">ARQUITECTOS DE LA LÍNEA TEMPORAL · CORE SET 1.0.1</div>
+    <p>La realidad se hizo añicos en el <b>Colapso</b>. Lideras una facción de arquitectos temporales que pugnan por <b>estabilizar, alterar o colapsar</b> el flujo del tiempo. Reúne <b>20 Puntos AION</b> y reescribe el destino antes de que tu rival borre el tuyo de la historia.</p>
+    <div class="menugrid">
+      <button class="bigbtn hero" onclick="openCampaign()">🗺️ Modo Campaña<small>Los Fragmentos de Kaelen</small></button>
+      <button class="bigbtn" onclick="quickPlay()">⚡ Partida Rápida</button>
+      <button class="bigbtn" onclick="openTutorial()">📚 Tutorial</button>
+      <button class="bigbtn" onclick="openBuilder()">🛠️ Constructor</button>
+      <button class="bigbtn" onclick="openPacks()">🎴 Abrir Sobres</button>
+      <button class="bigbtn" onclick="openCatalog()">📖 Catálogo</button>
+      <button class="bigbtn" onclick="openGlossary()">📘 Glosario</button>
+      <button class="bigbtn util" onclick="openSettings()">⚙️ Ajustes</button>
+    </div>
+    <p style="font-size:11px;opacity:.6">¿Primera vez en la línea temporal? Empieza por el <b>Tutorial</b>. La <b>Partida Rápida</b> arma mazos automáticos para ambos bandos.</p>
+  </div>
+
+  <!-- CAMPAÑA -->
+  <style>
+  #campMap{position:relative;display:flex;flex-direction:column;gap:18px;max-width:720px;margin:14px auto;width:100%;overflow:auto;max-height:60vh;padding:10px 0 6px}
+  /* espina central tipo roguelike: une las filas de nodos */
+  #campMap::before{content:'';position:absolute;left:50%;top:8px;bottom:8px;width:4px;transform:translateX(-50%);
+    background:repeating-linear-gradient(180deg,rgba(255,213,107,.55) 0 10px,rgba(255,213,107,.12) 10px 20px);border-radius:3px;z-index:0;pointer-events:none}
+  .camprow{position:relative;z-index:1}
+  .campnode{position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 14px 11px;border-radius:14px;
+    background:linear-gradient(165deg,#1a2440,#111a2e);border:1px solid #2c3a5e;box-shadow:0 6px 16px rgba(0,0,0,.45);transition:transform .15s,box-shadow .15s,border-color .15s;text-align:center}
+  .campnode .cn-ic{font-size:30px;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 38% 32%,#26314f,#141c30);border:2px solid #34456f;box-shadow:inset 0 2px 8px rgba(0,0,0,.5);margin-bottom:1px}
+  .campnode .cn-name{font-weight:800;font-size:14px;line-height:1.15}
+  .campnode .cn-reg{font-size:11px;color:#9fb0d6}
+  .campnode .cn-diff{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:1px 7px;border-radius:8px;background:#0e1430;border:1px solid #2c3a5e;color:#b9c6ea;margin-top:2px}
+  .campnode.t-elite .cn-ic{border-color:var(--solaris);box-shadow:0 0 14px rgba(245,185,66,.4),inset 0 2px 8px rgba(0,0,0,.5)}
+  .campnode.t-shop .cn-ic{border-color:var(--gaia)}
+  .campnode.t-event .cn-ic{border-color:var(--conclave)}
+  .campnode.t-boss .cn-ic{border-color:var(--vacio);box-shadow:0 0 18px rgba(164,92,255,.5),inset 0 2px 8px rgba(0,0,0,.5)}
+  .campnode.done{border-color:#2a6b46}.campnode.done .cn-ic{border-color:var(--gaia);background:radial-gradient(circle at 38% 32%,#1c3a2a,#0f2018)}
+  .campnode.done .cn-name{color:#9fdfb6}
+  .campnode.locked{opacity:.4;filter:saturate(.5)}
+  .campnode.current{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 0 22px rgba(255,213,107,.45);animation:campPulse 1.6s ease-in-out infinite}
+  .campnode.current .cn-ic{border-color:var(--gold);box-shadow:0 0 16px rgba(255,213,107,.6),inset 0 2px 8px rgba(0,0,0,.5)}
+  @keyframes campPulse{0%,100%{box-shadow:0 0 0 2px var(--gold),0 0 16px rgba(255,213,107,.4)}50%{box-shadow:0 0 0 2px var(--gold),0 0 30px rgba(255,213,107,.85)}}
+  .campnode .minibtn{margin-top:5px}
+  .campfoot{display:flex;gap:10px;justify-content:center;margin-top:6px}
+  /* bandeja de reliquias */
+  .reliquary{display:flex;align-items:center;gap:8px;flex-wrap:wrap;max-width:720px;margin:2px auto 6px;padding:8px 12px;
+    background:linear-gradient(165deg,#1a1330,#0f0c1e);border:1px solid #3a2a5e;border-radius:12px}
+  .reliquary .rqlabel{font-size:11px;font-weight:800;letter-spacing:1px;color:#c9a7ff;text-transform:uppercase}
+  .reliquary .rqempty{font-size:12px;color:#7a6a9c;font-style:italic}
+  .relicpip{position:relative;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;
+    background:radial-gradient(circle at 38% 30%,#2a2150,#171030);border:1px solid var(--vacio);box-shadow:0 0 12px rgba(164,92,255,.35);cursor:help;transition:transform .12s}
+  .relicpip:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 0 18px rgba(164,92,255,.7)}
+  </style>
+  <div id="campaign" class="scrn hidden">
+    <div class="bhead">
+      <h2>🗺️ Los Fragmentos de Kaelen</h2>
+      <span id="campCrystals" style="font-size:13px;color:var(--gold);margin-left:8px">💎 0 Cristales</span>
+      <button class="minibtn" style="margin-left:auto" onclick="campToMenu()">← Menú</button>
+    </div>
+    <div id="reliquary" class="reliquary"></div>
+    <div id="campMap"></div>
+    <div class="campfoot">
+      <button class="bigbtn" onclick="campEditDeck('map')">🛠️ Editar Mazo</button>
+      <button class="minibtn" onclick="campAdvice()">💡 Consejo</button>
+      <button class="minibtn" onclick="campReset()">↻ Nueva travesía</button>
+    </div>
+  </div>
+
+  <!-- MERCADO DE EONES (tienda campaña) -->
+  <style>
+  .shopsec{max-width:760px;margin:14px auto;padding:14px;border:1px solid #243154;border-radius:12px;background:#121a2e}
+  .shopsec h3{margin:0 0 6px;font-size:15px}.shopsub{font-size:12px;color:#9fb0d6;margin:0 0 10px}
+  .packrow{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;justify-content:center}
+  .selllist{display:flex;flex-direction:column;gap:6px;max-height:220px;overflow:auto}
+  .sellrow{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;padding:4px 8px;background:#0e1526;border-radius:8px}
+  .traderow{display:flex;gap:8px;flex-wrap:wrap}
+  </style>
+  <div id="campShop" class="scrn hidden">
+    <div class="bhead">
+      <h2>🛒 Mercado de Eones</h2>
+      <span id="shopCrystals" style="font-size:13px;color:var(--gold);margin-left:8px">💎 0 Cristales</span>
+      <button class="minibtn" style="margin-left:auto" onclick="campEditDeck('shop')">🛠️ Editar mazo</button>
+      <button class="minibtn" onclick="campShopContinue()">Continuar →</button>
+    </div>
+    <div id="shopBody" style="overflow:auto;flex:1"></div>
+  </div>
+
+  <!-- PACKS -->
+  <div id="packs" class="scrn hidden">
+    <div class="bhead">
+      <h2>🎴 ABRIR SOBRES</h2>
+      <span style="font-size:12px;color:#9fb0d6">Fragmentos de Memoria de Kaelen · 10 cartas por sobre</span>
+      <button class="minibtn" style="margin-left:auto" onclick="backToMenu()">← Menú</button>
+    </div>
+    <div id="packStage">
+      <div class="packbanner" id="packBanner">Sincroniza tu terminal y extrae protocolos olvidados del Colapso.</div>
+      <div id="packGrid"></div>
+    </div>
+    <div class="packfoot">
+      <button class="packbtn-open" onclick="openOnePack()">🎴 Abrir un Sobre</button>
+      <div>
+        <div class="packstat">Sobres: <b id="packCount">0</b> · Raras: <b id="packR">0</b> · Épicas: <b id="packE">0</b> · Legendarias: <b id="packL">0</b> · Promos: <b id="packP">0</b></div>
+        <div class="packodds">Wildcard: 65% Rara · 20% Épica · 12.5% Legendaria · 2.5% Promo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILDER -->
+  <div id="builder" class="scrn hidden">
+    <div class="bhead">
+      <h2>CONSTRUCTOR</h2>
+      <div id="factionTabs" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      <button class="minibtn" style="margin-left:auto" onclick="backToMenu()">← Menú</button>
+    </div>
+    <div class="autogen" id="autogenBar"><span style="font-size:11px;color:#9fb0d6;align-self:center;margin-right:4px">AUTOGENERAR MAZO:</span></div>
+    <div class="autogen" id="starterBar"><span style="font-size:11px;color:#9fb0d6;align-self:center;margin-right:4px">MAZOS PREARMADOS (STARTER):</span></div>
+    <div class="bbody">
+      <div class="gridcol">
+        <div class="filterbar">
+          <input id="bSearch" placeholder="🔍 Buscar carta..." oninput="onBuilderFilter()">
+          <select id="bType" onchange="onBuilderFilter()"><option value="">Tipo: todos</option><option value="entidad">Entidad</option><option value="directiva">Directiva</option><option value="ancla">Ancla</option></select>
+          <select id="bCost" onchange="onBuilderFilter()"><option value="">Coste: todos</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option value="6">6+</option></select>
+          <select id="bKw" onchange="onBuilderFilter()"><option value="">Keyword: todas</option><option value="baluarte">Baluarte</option><option value="impulso">Impulso</option><option value="aereo">Aéreo</option><option value="impacto">Impacto</option><option value="mutar">Mutar</option><option value="glitch">Glitch</option></select>
+          <select id="bRarity" onchange="onBuilderFilter()"><option value="">Rareza: todas</option><option value="C">Común</option><option value="PC">Poco Común</option><option value="R">Rara</option><option value="E">Épica</option><option value="L">Legendaria</option><option value="P">Promo</option></select>
+          <button class="minibtn" onclick="clearBuilderFilter()" title="Limpiar filtros">✕</button>
+        </div>
+        <div id="cardGrid"></div>
+      </div>
+      <div class="deckpanel">
+        <h3>TU MAZO</h3>
+        <div class="deckstat" id="deckStat"></div>
+        <div id="deckCurve" class="deckcurve"></div>
+        <div id="deckList"></div>
+        <div id="deckSlots" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0;font-size:12px"></div>
+        <div class="builder-foot">
+          <button class="minibtn" onclick="clearDeck()">🗑️ Vaciar</button>
+          <button class="minibtn" onclick="exportDeck()">⬆️ Exportar</button>
+          <button class="minibtn" onclick="importDeck()">⬇️ Importar</button>
+          <div class="aiconf">
+            IA: <select id="aiFacSel"></select>
+          </div>
+        </div>
+        <div style="margin-top:8px;display:flex;justify-content:center">
+          <button class="playbtn" id="playDeckBtn" onclick="playWithDeck()" disabled>▶ JUGAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATÁLOGO -->
+  <div id="catalog" class="scrn hidden">
+    <div class="bhead">
+      <h2>CATÁLOGO</h2>
+      <div class="filterbar" style="flex:1">
+        <select id="cFac" onchange="renderCatalog()"><option value="">Facción: todas</option><option value="solaris">Imperio Solaris</option><option value="neon">Sindicato Neón</option><option value="gaia">Dinastía Gaia</option><option value="forja">Forja de Hierro</option><option value="conclave">Cónclave Aether</option><option value="vacio">Vacío Estelar</option><option value="neutral">Neutral</option></select>
+        <input id="cSearch" placeholder="🔍 Buscar carta..." oninput="renderCatalog()">
+        <select id="cType" onchange="renderCatalog()"><option value="">Tipo: todos</option><option value="entidad">Entidad</option><option value="directiva">Directiva</option><option value="ancla">Ancla</option></select>
+        <select id="cCost" onchange="renderCatalog()"><option value="">Coste: todos</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option value="6">6+</option></select>
+        <select id="cKw" onchange="renderCatalog()"><option value="">Keyword: todas</option><option value="baluarte">Baluarte</option><option value="impulso">Impulso</option><option value="aereo">Aéreo</option><option value="impacto">Impacto</option><option value="mutar">Mutar</option><option value="glitch">Glitch</option></select>
+        <select id="cRarity" onchange="renderCatalog()"><option value="">Rareza: todas</option><option value="C">Común</option><option value="PC">Poco Común</option><option value="R">Rara</option><option value="E">Épica</option><option value="L">Legendaria</option><option value="P">Promo</option></select>
+        <button class="minibtn" onclick="clearCatFilter()" title="Limpiar">✕</button>
+      </div>
+      <span id="catCount" style="font-size:12px;color:#9fb0d6"></span>
+      <button class="minibtn" onclick="backToMenu()">← Menú</button>
+    </div>
+    <div id="catGrid"></div>
+  </div>
+
+  <!-- BOARD -->
+  <div id="board" class="scrn hidden">
+    <div class="sidebar-row">
+      <div class="pinfo" id="aiInfo">
+        <div class="ava" id="aiAva">🤖</div><div><div class="nm">IA<small id="aiFacLbl">—</small></div></div>
+        <div class="counter"><span>🂠</span><b id="aiDeck">0</b><span>Mazo</span></div>
+        <div class="counter"><span>🃏</span><b id="aiHandCt">0</b><span>Mano</span></div>
+        <div class="counter"><span>⏳</span><b id="aiTL">0</b><span>Timeline</span></div>
+        <div class="counter clk" onclick="openZone('ai','void')" title="Ver Vacío de la IA"><span>🗂️</span><b id="aiVoid">0</b><span>Vacío</span></div>
+        <div class="counter clk" onclick="openZone('ai','exile')" title="Ver Exilio de la IA"><span>🚫</span><b id="aiExile">0</b><span>Exilio</span></div>
+        <div class="pa-ring" id="aiPAring"><div class="pa-orb" id="aiPAorb"><span class="num" id="aiPA">0</span><span class="lab">P.AION</span></div></div>
+      </div>
+    </div>
+    <div id="aiHand" class="handwrap"></div>
+    <div class="rowzone support" id="aiSupport"><span class="zonelabel">IA · Soporte</span></div>
+    <div class="rowzone front" id="aiFront"><span class="zonelabel">IA · Frente</span></div>
+    <div id="centerbar">
+      <div class="pinfo" id="pInfo" style="min-width:280px">
+        <div class="ava" id="pAva">🛡️</div><div><div class="nm">Tú<small id="pFacLbl">—</small></div></div>
+        <div class="counter"><span>🂠</span><b id="pDeck">0</b><span>Mazo</span></div>
+        <div class="counter"><span>⏳</span><b id="pTL">0</b><span>Timeline</span></div>
+        <div class="counter clk" onclick="openZone('player','void')" title="Ver tu Vacío"><span>🗂️</span><b id="pVoid">0</b><span>Vacío</span></div>
+        <div class="counter clk" onclick="openZone('player','exile')" title="Ver tu Exilio"><span>🚫</span><b id="pExile">0</b><span>Exilio</span></div>
+        <div class="aether-pip" id="pAether"></div>
+      </div>
+      <div id="turnInfo">Turno <b id="turnNum">1</b> · <span id="phaseTxt">Tu Fase Principal</span></div>
+      <div class="phasebtns">
+        <button class="pbtn" id="chargeBtn" onclick="beginCharge()">⏳ Cargar Timeline</button>
+        <button class="pbtn end" id="endBtn" onclick="endTurn()">Terminar Turno ⏩</button>
+        <button class="pbtn" id="concedeBtn" onclick="concedeGame()" title="Rendirse">🏳️</button>
+      </div>
+      <div class="pa-ring" id="pPAring"><div class="pa-orb" id="pPAorb"><span class="num" id="pPA">0</span><span class="lab">P.AION</span></div></div>
+    </div>
+    <div class="rowzone front" id="pFront"><span class="zonelabel">Tú · Frente</span></div>
+    <div class="rowzone support" id="pSupport"><span class="zonelabel">Tú · Soporte</span></div>
+    <div id="playerHand" class="handwrap"></div>
+    <style>
+    #glogToggle{position:fixed;right:12px;bottom:12px;z-index:80;background:#1a2238;border:1px solid #2c3a5e;color:#cdd8f5;border-radius:50%;width:42px;height:42px;font-size:18px;cursor:pointer}
+    #glogPanel{position:fixed;right:12px;bottom:62px;width:300px;max-height:46vh;background:rgba(10,14,26,.96);border:1px solid #2c3a5e;border-radius:12px;z-index:80;display:none;flex-direction:column;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+    #glogPanel.show{display:flex}
+    #glogPanel .glh{padding:8px 12px;font-weight:700;border-bottom:1px solid #2c3a5e;font-size:13px}
+    #glogList{overflow:auto;padding:8px 12px;font-size:12px;color:#bcc9ec;display:flex;flex-direction:column;gap:3px}
+    </style>
+    <button id="glogToggle" onclick="toggleGlog()" title="Registro de partida">📜</button>
+    <div id="glogPanel"><div class="glh">📜 Registro de partida <button class="minibtn" style="float:right;padding:2px 8px" onclick="toggleGlog()">✕</button></div><div id="glogList"></div></div>
+  </div>
+
+  <div id="endover"><h2 id="endTitle"></h2><p id="endSub"></p><div id="endPAbar"></div><p id="endStats" style="font-size:13px;opacity:.75"></p><div id="endRunSummary"></div><div id="endBtns" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"></div></div>
+</div>
+
+<div id="preview"></div>
+<div id="solonPeek"></div>
+<div id="actionMenu"></div>
+<div id="mutar"><div class="mbox"><h3>✦ MUTAR</h3><div class="mname" id="mutarName"></div><div class="mopts" id="mutarOpts"></div></div></div>
+<div id="voidView"><div class="vbox"><h3 id="voidTitle"></h3><div id="voidList"></div><button class="closebtn" onclick="closeVoid()">Cerrar</button></div></div>
+<div id="reactWin"><div class="rbox"><h3>⚡ VENTANA DE REACCIÓN</h3><div class="rname" id="reactPrompt"></div><div class="ropts" id="reactOpts"></div></div></div>
+<div id="peekWin"><div class="pkbox"><h3>🔭 FILTRAR MAZO</h3><div class="pksub">Esta es la carta en el <b>tope</b> de tu mazo. ¿La dejas arriba (será tu próximo robo) o la mandas al fondo?</div><div id="peekCard" class="card"></div><div class="pkopts"><button class="pkbtn" id="peekKeep">⬆ Dejar en el tope</button><button class="pkbtn alt" id="peekBottom">⬇ Enviar al fondo</button></div></div></div>
+<div id="setupChoice"><div class="sbox"><h3>¿QUIÉN EMPIEZA?</h3><div class="schoice"><button class="schbtn" onclick="chooseFirst('player')">🛡️ Empiezo yo</button><button class="schbtn" onclick="chooseFirst('ai')">🤖 Empieza la IA</button><button class="schbtn rnd" onclick="chooseFirst('random')">🎲 Aleatorio</button></div><p class="snote">El jugador que empieza no roba carta en su primer turno.</p></div></div>
+<div id="mulliganView"><div class="mvbox"><h3>MULLIGAN</h3><p class="mvsub" id="mullInfo"></p><div id="mullGrid"></div><button class="closebtn" onclick="confirmMulligan()">✔ Confirmar mano</button></div></div>
+<div id="tutSelect"><div class="tsbox"><h3>📚 TUTORIAL — ELIGE TU MAZO DE DEMOSTRACIÓN</h3><p class="tssub">Mazos de 20 cartas para aprender. La IA usará otro mazo de demostración.</p><div id="tutOpts"></div><button class="minibtn" style="margin-top:14px" onclick="closeTutorial()">← Volver</button></div></div>
+<div id="coach"><div class="coachAva">🧙</div><div class="coachBody"><div id="coachText"></div><button id="coachBtn" class="coachBtn">Siguiente →</button></div></div>
+<div id="cardDetail"><div class="cdbox">
+  <div id="cdCardWrap"><div class="card" id="cdCard"></div></div>
+  <div class="cdinfo">
+    <div id="cdName"></div><div id="cdMeta"></div><div id="cdPos"></div><div id="cdText"></div><div id="cdKw"></div>
+    <div class="cdbtns"><button id="cdFlip" onclick="cdToggleSide()">🔄 Ver Lado B</button><button class="closebtn" onclick="closeDetail()">Cerrar</button></div>
+  </div>
+</div></div>
+<canvas id="fx"></canvas>
+<div id="flash"></div>
+<div id="toast"></div>
+<div id="banner"><div class="txt" id="bannerTxt"></div></div>
+<button class="helpbtn hidden" id="helpBtn" onclick="toggleHelp()">?</button>
+<button class="helpbtn hidden" id="muteBtn" style="bottom:58px" onclick="toggleMute()">🔊</button>
+<button class="helpbtn hidden" id="musicBtn" style="bottom:102px" onclick="toggleMusic()">🎵</button>
+<button class="helpbtn hidden" id="emoteBtn" style="bottom:146px" onclick="toggleEmoteBar()">😀</button>
+<div id="emoteBar">
+  <button onclick="playerEmote('👋 ¡Hola!')">👋</button>
+  <button onclick="playerEmote('👍 ¡Bien jugado!')">👍</button>
+  <button onclick="playerEmote('😎 Prepárate')">😎</button>
+  <button onclick="playerEmote('😅 ¡Ups!')">😅</button>
+</div>
+<div id="help"><div class="box" id="helpBox"></div></div>
+
+<script>/*__AION_APP_JS__*/</script>
+<div id="glossary" class="glossover"><div class="glossbox">
+  <div class="glosshd"><b>📘 Glosario de Reglas — AION</b><button class="minibtn" onclick="closeGlossary()">✕</button></div>
+  <div class="glossbody" id="glossBody"></div>
+</div></div>
+<style>
+.glossover{position:fixed;inset:0;z-index:120;background:rgba(5,7,16,.82);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center}
+.glossover.show{display:flex}
+.glossbox{width:min(680px,92vw);max-height:84vh;background:#0f1626;border:1px solid #2c3a5e;border-radius:14px;display:flex;flex-direction:column;overflow:hidden}
+.glosshd{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #2c3a5e;font-size:16px}
+.glossbody{overflow:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.glossbody .gk{font-size:13px;color:#cdd8f5}.glossbody .gk b{color:var(--gold)}
+</style>
+<div id="settings" class="glossover"><div class="glossbox">
+  <div class="glosshd"><b>⚙️ Ajustes y Accesibilidad</b><button class="minibtn" onclick="closeSettings()">✕</button></div>
+  <div class="glossbody" id="settingsBody"></div>
+</div></div>
+<style>
+.setrow{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;padding:4px 0}
+.setrow .pill{margin-left:4px}
+body.rmotion *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+body.hc{filter:contrast(1.15) saturate(1.1)}
+body.hc .card,body.hc .gcard{outline:2px solid rgba(255,255,255,.4)}
+
+/* ===== Fase 6: Accesibilidad ===== */
+/* Foco de teclado visible (no afecta a clics de ratón gracias a :focus-visible) */
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+button:focus-visible,.pill:focus-visible,.btab:focus-visible,.minibtn:focus-visible,.bigbtn:focus-visible,.amBtn:focus-visible,.pbtn:focus-visible,.coachBtn:focus-visible,.closebtn:focus-visible,.schbtn:focus-visible,.packbtn-open:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:10px}
+input:focus-visible,select:focus-visible{outline:2px solid var(--conclave);outline-offset:1px}
+/* Respeta la preferencia del sistema operativo aunque el usuario no toque Ajustes */
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+@media (prefers-contrast:more){
+  .card,.gcard,.campnode,.pinfo{outline:1px solid rgba(255,255,255,.32)}
+  #turnInfo,.deckstat,.cn-reg,.packstat{color:#dfe8ff}
+}
+
+/* ===== Fase 6: Responsive por ancho (tablet / móvil) ===== */
+@media (max-width:820px){
+  #start h1{font-size:46px;letter-spacing:6px}
+  .menugrid{width:min(460px,94vw)}
+  #preview{display:none!important}
+  /* Constructor: apilar rejilla y panel de mazo */
+  .bbody{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;gap:10px}
+  #cardGrid{max-height:42vh}
+  .deckpanel{max-height:46vh}
+  /* Modales caben en pantalla */
+  #cardDetail .cdbox{flex-direction:column;gap:14px;padding:18px 18px;max-width:94vw}
+  #cdCardWrap{width:120px}#cdCard{transform:scale(1.2)}
+  .tsbox,.mvbox,.sbox,.pkbox,.rbox,.mbox,.vbox,.glossbox,.coachBody{max-width:94vw}
+  #coach{max-width:min(360px,92vw)}
+  #campMap{max-width:94vw}
+  .camprow{gap:18px}
+  .camprow .campnode{width:170px}
+  #glogPanel{width:min(300px,92vw)}
+  /* Tablero más compacto */
+  #board .card{width:74px;height:104px}
+  #board .card .art{height:42px;font-size:26px}
+  #board .rowzone{min-height:94px}
+  #board .slot{width:70px;height:88px}
+  #playerHand{min-height:112px}
+  .hcard{margin:0 -12px}
+}
+@media (max-width:560px){
+  #start h1{font-size:36px;letter-spacing:4px}
+  #start p{font-size:12px}
+  .menugrid{grid-template-columns:1fr;width:min(340px,94vw)}
+  .menugrid .bigbtn{min-height:54px;font-size:15px}
+  .bhead h2{font-size:18px}
+  .bigbtn{padding:13px 24px;font-size:16px}
+  /* Cabeceras de jugador: ocultar etiquetas de texto, conservar números */
+  .counter span{display:none}
+  .pinfo{gap:7px;padding:4px 8px}
+  .pinfo .nm small{display:none}
+  /* Tablero aún más compacto en teléfonos */
+  #board .card{width:62px;height:88px}
+  #board .card .art{height:36px;font-size:21px}
+  #board .card .name{min-height:16px;font-size:8px}
+  #board .rowzone{min-height:80px;gap:6px}
+  #board .slot{width:58px;height:74px}
+  #playerHand{min-height:96px}
+  .hcard{margin:0 -16px}
+  .pbtn{padding:7px 10px;font-size:12px}
+  .phasebtns{gap:5px}
+  #turnInfo{font-size:11px}
+  /* Pantalla de fin */
+  #endover h2{font-size:42px;letter-spacing:3px}
+}
+</style>
+<div id="campReward" class="glossover"><div class="glossbox" style="text-align:center">
+  <div class="glosshd"><b>🎁 Recompensa — elige una carta</b></div>
+  <div id="rewardCards" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:16px"></div>
+  <div style="padding:0 0 14px"><button class="minibtn" onclick="campRewardSkip()">Saltar</button></div>
+</div></div>
+<div id="welcome" class="glossover"><div class="glossbox" style="text-align:center">
+  <div class="glosshd"><b>✨ Bienvenido a AION</b></div>
+  <div class="glossbody" style="text-align:left">
+    <p>La realidad se hizo añicos en el <b>Colapso</b>. Eres un arquitecto temporal: reúne <b>20 Puntos AION</b> antes que tu rival.</p>
+    <p>¿Primera vez? El <b>Tutorial</b> te guía paso a paso, sin que memorices nada.</p>
+  </div>
+  <div style="display:flex;gap:10px;justify-content:center;padding:0 0 16px;flex-wrap:wrap">
+    <button class="bigbtn" onclick="welcomeTutorial()">📚 Jugar el Tutorial</button>
+    <button class="bigbtn alt" onclick="welcomeSkip()">Explorar por mi cuenta</button>
+  </div>
+</div></div>
+<div id="campEvent" class="glossover"><div class="glossbox">
+  <div class="glosshd"><b id="eventTitle">Evento</b></div>
+  <div class="glossbody" id="eventBody"></div>
+</div></div>
+<style>.camprow{display:flex;gap:34px;justify-content:center;flex-wrap:wrap;margin-bottom:0}.camprow .campnode{flex:0 1 auto;width:200px;max-width:240px}.relicbar{display:inline-flex;gap:4px;margin-left:6px}</style>
+<div id="handPick" class="glossover"><div class="glossbox">
+  <div class="glosshd"><b id="handPickTitle">Elige una carta</b></div>
+  <div id="handPickCards" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:14px;max-height:60vh;overflow:auto"></div>
+  <div style="padding:0 0 14px;text-align:center"><button class="minibtn" id="handPickSkip">No descartar</button></div>
+</div></div>
+<div id="confirmBox" class="glossover"><div class="glossbox" style="text-align:center;max-width:440px">
+  <div class="glossbody" id="confirmText" style="font-size:14px"></div>
+  <div style="display:flex;gap:10px;justify-content:center;padding:0 0 16px"><button class="bigbtn" id="confirmYes">Sí</button><button class="bigbtn alt" id="confirmNo">No</button></div>
+</div></div>
+<div id="targetBanner"><span class="tbtext"></span><button class="minibtn" onclick="cancelTarget()">Cancelar (Esc)</button></div>
+<div id="tutSpot"></div>
+</body>
+</html>

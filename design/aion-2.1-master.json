@@ -1,0 +1,4031 @@
+[
+ {
+  "code": "AIO-CE-001",
+  "name": "Escudero de Iones",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "[Ascensión]: Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-002",
+  "name": "Custodio del Alba",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Entrada — Sanar 1 a otra Entidad aliada.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Cuando esta Entidad Estabiliza, Sanar 1 a otra Entidad aliada."
+  }
+ },
+ {
+  "code": "AIO-CE-003",
+  "name": "Sentencia Solar",
+  "fac": "Imperio Solaris",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Reacción — Al declararse un Ataque enemigo: La Entidad atacante recibe 2 Daño. Timeline Bonus — Si controlas una Entidad Solaris: Sanar 1 a una Entidad aliada."
+ },
+ {
+  "code": "AIO-CE-004",
+  "name": "Mensajero Zero-Day",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 1,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "Cuando esta Entidad Estabiliza, puedes aplicar Glitch a 1 Entidad enemiga agotada. Si no puedes, roba 1 carta.",
+  "B": {
+   "pow": 3,
+   "hp": 2,
+   "sync": 1,
+   "kw": [
+    "glitch"
+   ],
+   "text": "Cuando esta Entidad Estabiliza, puedes aplicar Glitch a 1 carta agotada del Timeline enemigo."
+  }
+ },
+ {
+  "code": "AIO-CE-005",
+  "name": "Yui, Glitch Idol",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 2,
+  "kw": [
+   "glitch"
+  ],
+  "text": "Activa — Agota esta Entidad: Aplica Glitch a 1 Entidad enemiga agotada. Si no puedes, roba 1 carta.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 2,
+   "kw": [
+    "glitch"
+   ],
+   "text": "La primera vez por partida que una Entidad enemiga recibe Glitch, ganas 1 PA."
+  }
+ },
+ {
+  "code": "AIO-CE-006",
+  "name": "Señal de Proyecto Nueve",
+  "fac": "Sindicato Neón",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Una vez por turno, cuando el oponente agote una carta de su Timeline para pagar una Directiva, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-007",
+  "name": "Brote Simbiótico",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana +2 POW. - Crea 1 Token Brote en tu Frente.",
+  "B": {
+   "pow": 2,
+   "hp": 4,
+   "sync": 2,
+   "kw": [],
+   "text": "[Ascensión]: Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-008",
+  "name": "Raptor Alfa-Gen",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana Impulso. - Esta Entidad gana +2 HP.",
+  "B": {
+   "pow": 5,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-009",
+  "name": "Cámara de Germinación",
+  "fac": "Dinastía Gaia",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Al inicio de tu turno, Sanar 1 a una Entidad aliada. Si no puedes, roba 1 carta y descarta 1 carta. Activa — Agota esta Ancla: Mueve una Entidad Gaia Flexible aliada entre tu Frente y tu Soporte."
+ },
+ {
+  "code": "AIO-CE-010",
+  "name": "Aprendiz de Piro-Soldador",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 0,
+  "kw": [
+   "impacto"
+  ],
+  "text": "Activa — Una vez por turno: Esta Entidad gana +2 POW este turno. Al final del turno, recibe 1 Daño. La primera vez por turno que esta Entidad recibiría daño de tus propios efectos, reduce ese daño en 1.",
+  "B": {
+   "pow": 3,
+   "hp": 3,
+   "sync": 0,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Activa — Una vez por turno: Esta Entidad gana +2 POW este turno. Al final del turno, recibe 1 Daño. La primera vez por turno que esta Entidad recibiría daño de tus propios efectos, reduce ese daño en 1."
+  }
+ },
+ {
+  "code": "AIO-CE-011",
+  "name": "Incinerador Blindado",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 5,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes hacer que esta Entidad reciba 1 Daño. Si lo haces, inflige 1 Daño a una Entidad enemiga agotada.",
+  "B": {
+   "pow": 5,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "La primera vez que esta Entidad recibe daño durante tu turno, reduce ese daño en 1."
+  }
+ },
+ {
+  "code": "AIO-CE-012",
+  "name": "Inyección de Nitro",
+  "fac": "Forja de Hierro",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad aliada. Gana Impulso y +2 POW este turno. Al final del turno, recibe 1 Daño."
+ },
+ {
+  "code": "AIO-CE-013",
+  "name": "Observadora de Mareas",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 4,
+   "sync": 2,
+   "kw": [],
+   "text": "Cuando esta Entidad Estabiliza, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-014",
+  "name": "Guardián del Velo",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "",
+  "B": {
+   "pow": 2,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Las Directivas enemigas que elijan esta Entidad cuestan 1 Aether adicional."
+  }
+ },
+ {
+  "code": "AIO-CE-015",
+  "name": "Negación Astral",
+  "fac": "Cónclave Aether",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Reacción — Cuando el oponente juega una Directiva de coste 2 o menos: Cancela esa Directiva. Va al Vacío sin resolverse. Timeline Bonus — Si tienes 5 o más cartas en tu Timeline: Roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-016",
+  "name": "Dron de Sondeo Corrupto",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Envía la carta superior de tu mazo al Vacío.",
+  "B": {
+   "pow": 2,
+   "hp": 3,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad Estabiliza, puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, una Entidad enemiga no Token recibe 1 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-017",
+  "name": "Portadora del Umbral",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 5,
+  "sync": 2,
+  "kw": [],
+  "text": "Entrada — Puedes enviar las 2 cartas superiores de tu mazo al Vacío.",
+  "B": {
+   "pow": 3,
+   "hp": 6,
+   "sync": 2,
+   "kw": [],
+   "text": "Al inicio de tu turno, si tienes 5 o más cartas en tu Vacío, puedes poner 1 carta de tu Vacío en el fondo de tu mazo. Si lo haces, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-018",
+  "name": "Susurro de Yami",
+  "fac": "Vacío Estelar",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad enemiga. Si no está dañada, recibe 1 Daño. Si está dañada, recibe 2 Daño. Timeline Bonus — Si controlas una Entidad del Vacío: Si esa Entidad es destruida este turno, exíliala en lugar de enviarla al Vacío."
+ },
+ {
+  "code": "AIO-CE-019",
+  "name": "Dron de Entregas",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "aereo"
+  ],
+  "text": "Si esta Entidad es destruida, roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-020",
+  "name": "Conciliadora del Mercado de Eones",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 2,
+  "kw": [],
+  "text": "Reacción — Una vez por turno, cuando una Entidad enemiga declara un Ataque: Puedes agotar esta Entidad y pagar 2 Aether. Si lo haces, ese Ataque no inflige ni recibe daño."
+ },
+ {
+  "code": "AIO-CE-021",
+  "name": "Botiquín de Auxilios",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Sanar 1 a una Entidad aliada. Timeline Bonus — Si tienes 5 o más cartas en tu Timeline: Sanar 1 adicional a esa Entidad."
+ },
+ {
+  "code": "AIO-CE-022",
+  "name": "Arquera de Fotones",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, si la defensora está dañada, gana +1 POW este combate.",
+  "B": {
+   "pow": 3,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "aereo"
+   ],
+   "text": ""
+  }
+ },
+ {
+  "code": "AIO-CE-023",
+  "name": "Estandarte Solar",
+  "fac": "Imperio Solaris",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Continuo — Tus Entidades Solaris con Baluarte tienen +1 HP. Activa — Agota esta Ancla: Sanar 1 a una Entidad Solaris con Baluarte."
+ },
+ {
+  "code": "AIO-CE-024",
+  "name": "Voto de Serafín",
+  "fac": "Imperio Solaris",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Reacción — Al declararse una Estabilización enemiga: Sanar 1 a una Entidad aliada. Luego, una Entidad aliada con Baluarte puede recibir 1 Daño para que el oponente gane 1 PA menos por esa Estabilización."
+ },
+ {
+  "code": "AIO-CE-025",
+  "name": "Duelista Callejero",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 1,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "",
+  "B": {
+   "pow": 5,
+   "hp": 2,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": ""
+  }
+ },
+ {
+  "code": "AIO-CE-026",
+  "name": "Backdoor Exploit",
+  "fac": "Sindicato Neón",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Aplica Glitch a 1 Entidad enemiga agotada. Timeline Bonus — Si controlas una Entidad Neón: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-027",
+  "name": "Terminal de Hackeo",
+  "fac": "Sindicato Neón",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Activa — Agota esta Ancla: Aplica Glitch a 1 carta agotada del Timeline enemigo. Activa solo si controlas una Entidad Neón Ascendida."
+ },
+ {
+  "code": "AIO-CE-028",
+  "name": "Jardinero de Esporas",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Roba 1 carta, luego descarta 1 carta. - Esta Entidad gana +2 POW y +1 HP.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 2,
+   "kw": [],
+   "text": "Cuando esta Entidad Estabiliza, puedes Sanar 1 a otra Entidad aliada."
+  }
+ },
+ {
+  "code": "AIO-CE-029",
+  "name": "Injertador de Raíces",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Coloca la carta superior de tu mazo boca abajo en tu Timeline agotada. - Sanar 2 a esta Entidad.",
+  "B": {
+   "pow": 2,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "Al inicio de tu turno, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-030",
+  "name": "Cicatrización Verde",
+  "fac": "Dinastía Gaia",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Sanar 2 repartido como elijas entre Entidades aliadas. Timeline Bonus — Si controlas una Entidad Gaia: Una de esas Entidades gana +1 HP este turno."
+ },
+ {
+  "code": "AIO-CE-031",
+  "name": "Chatarrero Cromado",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Si esta Entidad es destruida en combate, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo. Luego roba 1 carta.",
+  "B": {
+   "pow": 4,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-032",
+  "name": "Corte de Soplete",
+  "fac": "Forja de Hierro",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Destruye 1 Ancla. Luego, una Entidad enemiga agotada recibe 2 Daño."
+ },
+ {
+  "code": "AIO-CE-033",
+  "name": "Disipador Térmico",
+  "fac": "Forja de Hierro",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Activa — Agota esta Ancla: Sanar 1 a una Entidad Forja. Si esa Entidad está dañada, Sanar 1 adicional."
+ },
+ {
+  "code": "AIO-CE-034",
+  "name": "Magistrada de Gravedad Zero",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes mover una Entidad enemiga agotada del Frente a su Soporte si hay espacio.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando juegas una Directiva, puedes mover una Entidad Flexible aliada entre tu Frente y Soporte."
+  }
+ },
+ {
+  "code": "AIO-CE-035",
+  "name": "Archivista del Tiempo",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Activa — Agota esta Entidad: Mira las 2 cartas superiores de tu mazo y devuélvelas en cualquier orden.",
+  "B": {
+   "pow": 2,
+   "hp": 4,
+   "sync": 2,
+   "kw": [],
+   "text": "Cuando esta Entidad Estabiliza, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-036",
+  "name": "Relicario del Momento",
+  "fac": "Cónclave Aether",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Una vez por turno, cuando resuelves una Directiva, puedes pagar 1 Aether. Si lo haces, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-037",
+  "name": "Predicador del Fin",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Cada jugador envía la carta superior de su mazo al Vacío.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Al inicio de tu turno, puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, una Entidad enemiga no Token recibe 1 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-038",
+  "name": "Necro-Médico",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes poner 1 Entidad de coste 1 de tu Vacío en tu Frente agotada.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Activa — Agota esta Entidad: Pon 1 Entidad de coste 1 de tu Vacío en tu Frente agotada. Luego envía la carta superior de tu mazo al Vacío."
+  }
+ },
+ {
+  "code": "AIO-CE-039",
+  "name": "Grito del Vacío",
+  "fac": "Vacío Estelar",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad enemiga. Esa Entidad obtiene -2 POW este turno. Timeline Bonus — Si controlas una Entidad del Vacío: Si la Entidad enemiga no está dañada, recibe 1 Daño. Si está dañada, recibe 2 Daño."
+ },
+ {
+  "code": "AIO-CE-040",
+  "name": "Dron Defensivo Modelo-X",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 3,
+  "sync": 0,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Si esta Entidad es destruida por combate, roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-041",
+  "name": "Comerciante del Tiempo",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Roba 1 carta, luego coloca 1 carta de tu mano en el fondo de tu mazo."
+ },
+ {
+  "code": "AIO-CE-042",
+  "name": "Firewall Físico",
+  "fac": "Neutral",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Continuo — Tus cartas en el Timeline no pueden recibir Glitch. Activa — Agota y destruye esta Ancla: Remueve Glitch de hasta 1 carta aliada."
+ },
+ {
+  "code": "AIO-CE-043",
+  "name": "Contrato de Desmantelamiento",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una: - Destruye 1 Ancla enemiga. - Mira la carta superior de tu mazo. Puedes ponerla en el fondo. Timeline Bonus — Si el oponente controla más Anclas que tú: Roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-044",
+  "name": "Batería de Reserva",
+  "fac": "Neutral",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Activa — Agota y destruye esta Ancla: Genera 1 Aether temporal este turno."
+ },
+ {
+  "code": "AIO-CE-045",
+  "name": "Pulso de Paradoja",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige 1 Entidad enemiga. Pierde sus keywords hasta el final del turno. Si está en Lado B, recibe 2 Daño. Timeline Bonus — Si el oponente tiene más cartas en su Timeline que tú: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-046",
+  "name": "Segador de Enjambres",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "impacto"
+  ],
+  "text": "Esta Entidad gana +1 POW durante combate contra Tokens."
+ },
+ {
+  "code": "AIO-CE-047",
+  "name": "Edicto de Oxidación",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Destruye 1 Ancla enemiga. Si controlas una Entidad con Baluarte, Sanar 1 a una Entidad aliada."
+ },
+ {
+  "code": "AIO-CE-048",
+  "name": "Cloud y Cake, Pandilla Peluda",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Continuo — Mientras esta Entidad esté preparada en el Frente, las Anclas enemigas no pueden activar habilidades Activa.",
+  "B": {
+   "pow": 2,
+   "hp": 6,
+   "sync": 2,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Al inicio de tu turno, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-049",
+  "name": "Cronista de Guerra",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 0,
+  "kw": [],
+  "text": "Una vez por turno, cuando otra Entidad aliada sea destruida, mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando otra Entidad aliada sea destruida, puedes robar 1 carta. Límite 1 vez por turno."
+  }
+ },
+ {
+  "code": "AIO-CE-050",
+  "name": "Paladín de la Guardia Real",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Cuando esta Entidad recibe Daño por combate y sobrevive, Sanar 1 a otra Entidad aliada.",
+  "B": {
+   "pow": 3,
+   "hp": 6,
+   "sync": 2,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "La primera vez por turno que otra Entidad aliada con Baluarte recibiría daño, reduce ese daño en 1."
+  }
+ },
+ {
+  "code": "AIO-CE-051",
+  "name": "Interceptora Serafín",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "aereo"
+  ],
+  "text": "Cuando esta Entidad ataca, si la defensora está en Soporte, recibe 1 Daño después del combate.",
+  "B": {
+   "pow": 5,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "aereo",
+    "impacto"
+   ],
+   "text": "Sanar 1 a otra Entidad aliada."
+  }
+ },
+ {
+  "code": "AIO-CE-052",
+  "name": "Corredor Fantasma",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "Entrada — Mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 4,
+   "hp": 2,
+   "sync": 1,
+   "kw": [
+    "impulso"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes aplicar Glitch a 1 Entidad enemiga agotada."
+  }
+ },
+ {
+  "code": "AIO-CE-053",
+  "name": "Redhat Hacker",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Mira las 2 cartas superiores de tu mazo. Pon una en el fondo y la otra arriba.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera Directiva Neón que juegas cada turno cuesta 1 Aether menos."
+  }
+ },
+ {
+  "code": "AIO-CE-054",
+  "name": "Cortina de Humo Digital",
+  "fac": "Sindicato Neón",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad aliada. Mueve esa Entidad entre tu Frente y Soporte si tiene posición Flexible. Luego mira la carta superior de tu mazo. Puedes ponerla en el fondo. Timeline Bonus — Si controlas una Entidad Neón: Esa Entidad gana +1 POW este turno."
+ },
+ {
+  "code": "AIO-CE-055",
+  "name": "Bestia de Carga Mutante",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Coloca la carta superior de tu mazo boca abajo en tu Timeline agotada. - Esta Entidad gana +2 HP.",
+  "B": {
+   "pow": 5,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad Estabiliza, puedes mover una Entidad Gaia Flexible aliada entre tu Frente y Soporte."
+  }
+ },
+ {
+  "code": "AIO-CE-056",
+  "name": "Coloso de Esporas",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "mutar",
+   "baluarte"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana +2 HP. - Cuando esta Entidad sea atacada este turno, la Entidad atacante recibe 1 Daño después del combate.",
+  "B": {
+   "pow": 3,
+   "hp": 7,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Al final de tu turno, si esta Entidad está dañada, crea 1 Token Brote en tu Frente."
+  }
+ },
+ {
+  "code": "AIO-CE-057",
+  "name": "Evolución Forzada",
+  "fac": "Dinastía Gaia",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Sanar 2 a una Entidad aliada. Si esa Entidad tiene Mutar, puedes cambiar su opción de Mutar elegida por otra opción impresa en esa carta. Timeline Bonus — Si controlas una Entidad Gaia: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-058",
+  "name": "Perro de Chatarra",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 0,
+  "kw": [
+   "impulso"
+  ],
+  "text": "Si esta Entidad es destruida en combate, puedes devolver 1 carta Forja de coste 2 o menos de tu Vacío a tu mano.",
+  "B": {
+   "pow": 4,
+   "hp": 2,
+   "sync": 0,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes Sanar 1 a una Entidad Forja. Si esta Entidad es destruida en combate, puedes devolver 1 carta Forja de coste 2 o menos de tu Vacío a tu mano."
+  }
+ },
+ {
+  "code": "AIO-CE-059",
+  "name": "Mortero de Chatarra",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes descartar 1 carta. Si lo haces, una Entidad enemiga agotada recibe 2 Daño.",
+  "B": {
+   "pow": 5,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes descartar 1 carta. Si lo haces, gana +2 POW este combate."
+  }
+ },
+ {
+  "code": "AIO-CE-060",
+  "name": "Traje Refrigerado",
+  "fac": "Forja de Hierro",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Una vez por turno, cuando una Entidad Forja aliada reciba Daño, reduce ese daño en 1. Activa — Agota esta Ancla: Sanar 1 a una Entidad Forja y mira la carta superior de tu mazo; puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-061",
+  "name": "Conserje del Tiempo",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Elige 1 carta de tu Vacío y ponla en el fondo de tu mazo.",
+  "B": {
+   "pow": 2,
+   "hp": 4,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando pongas una carta de tu Vacío en el fondo de tu mazo, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-062",
+  "name": "Cronomante Ofensivo",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Una vez por turno, cuando juegues una Directiva, una Entidad enemiga agotada recibe 1 Daño.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Una vez por turno, cuando juegues una Directiva, una Entidad enemiga agotada recibe 2 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-063",
+  "name": "Retroceso Temporal",
+  "fac": "Cónclave Aether",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad enemiga. Devuélvela a la mano de su dueño. Timeline Bonus — Si tienes 5 o más cartas en tu Timeline: El controlador de esa Entidad descarta 1 carta, luego roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-064",
+  "name": "Sirviente Infectado",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Si esta Entidad es destruida, envía la carta superior de tu mazo al Vacío. Luego puedes devolver 1 carta de coste 3 o menos de tu Vacío a tu mano.",
+  "B": {
+   "pow": 4,
+   "hp": 4,
+   "sync": 1,
+   "kw": [],
+   "text": "Si esta Entidad es destruida, puedes poner 1 carta de tu Vacío en el fondo de tu mazo."
+  }
+ },
+ {
+  "code": "AIO-CE-065",
+  "name": "Cadáver de Traje EVA",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 5,
+  "sync": 1,
+  "kw": [],
+  "text": "Activa — Agota esta Entidad: Envía la carta superior de tu mazo al Vacío. Si lo haces, Sanar 1 a esta Entidad.",
+  "B": {
+   "pow": 4,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "Al inicio de tu turno, si tienes 5 o más cartas en tu Vacío, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-066",
+  "name": "Horizonte de Sucesos",
+  "fac": "Vacío Estelar",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad enemiga. Si no está dañada, destrúyela. Si está dañada, recibe 2 Daño. Timeline Bonus — Si controlas una Entidad del Vacío: Si esa Entidad enemiga fue destruida de esta forma, exíliala en lugar de enviarla al Vacío."
+ },
+ {
+  "code": "AIO-CE-067",
+  "name": "Mercenario Veterano",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-068",
+  "name": "Robot de Carga",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes mover una Ancla aliada entre espacios de Soporte."
+ },
+ {
+  "code": "AIO-CE-069",
+  "name": "Sello de Almas",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Exilia 1 carta objetivo del Vacío de un jugador. Timeline Bonus — Si esa carta era una Entidad: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-070",
+  "name": "Huellas Borradas",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Devuelve una Entidad aliada de coste 2 o menos a tu mano. Si no puedes devolver una Entidad de esta forma, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-071",
+  "name": "Reinicio por Electroshock",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad enemiga. Pierde todos los aumentos temporales de POW y HP este turno. Luego recibe 1 Daño."
+ },
+ {
+  "code": "AIO-CE-072",
+  "name": "Defoliante de Área",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Destruye todos los Tokens en el Frente enemigo. Timeline Bonus — Si destruiste 2 o más Tokens de esta forma: Roba 1 carta, luego descarta 1 carta."
+ },
+ {
+  "code": "AIO-CE-073",
+  "name": "Infantería Solar",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "",
+  "B": {
+   "pow": 2,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": ""
+  }
+ },
+ {
+  "code": "AIO-CE-074",
+  "name": "Milicia de Aurora",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, si la defensora está dañada, gana +1 HP este turno.",
+  "B": {
+   "pow": 3,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Cuando esta Entidad Estabiliza, puedes Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-075",
+  "name": "Guardia de la Ciudadela",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "",
+  "B": {
+   "pow": 3,
+   "hp": 6,
+   "sync": 2,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "La primera vez por turno que esta Entidad recibe 2 o más Daño por combate, puedes Sanar 1 a otra Entidad Solaris."
+  }
+ },
+ {
+  "code": "AIO-CE-076",
+  "name": "Caballero de Plata",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 6,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad destruye una Entidad en combate, puedes Sanar 1 a esta Entidad. Límite 1 vez por turno.",
+  "B": {
+   "pow": 4,
+   "hp": 7,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, Sanar 1 a esta Entidad. Límite 1 vez por turno."
+  }
+ },
+ {
+  "code": "AIO-CE-077",
+  "name": "Corredor de Paquetes",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 1,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "",
+  "B": {
+   "pow": 3,
+   "hp": 2,
+   "sync": 1,
+   "kw": [
+    "impulso"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-078",
+  "name": "Pistolero Callejero",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, si la defensora está agotada, gana +1 POW este combate.",
+  "B": {
+   "pow": 4,
+   "hp": 3,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes aplicar Glitch a 1 Entidad enemiga agotada."
+  }
+ },
+ {
+  "code": "AIO-CE-079",
+  "name": "Asaltante de Circuitos",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "La primera Directiva Neón que juegas cada turno le da +1 POW a esta Entidad este turno.",
+  "B": {
+   "pow": 5,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-080",
+  "name": "Mercenario de Neón",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "Cuando esta Entidad ataca, recibe 1 Daño después del combate.",
+  "B": {
+   "pow": 6,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad ataca, recibe 1 Daño después del combate."
+  }
+ },
+ {
+  "code": "AIO-CE-081",
+  "name": "Semilla de Batalla",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Una Entidad aliada gana +1 POW y +1 HP. - Sanar 1 a esta Entidad.",
+  "B": {
+   "pow": 2,
+   "hp": 3,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad recibe Daño y sobrevive, gana +1 HP este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-082",
+  "name": "Guardián Arbóreo",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana +2 HP. - Esta Entidad gana Baluarte este turno.",
+  "B": {
+   "pow": 3,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Cuando esta Entidad Estabiliza, puedes Sanar 1 a otra Entidad Gaia."
+  }
+ },
+ {
+  "code": "AIO-CE-083",
+  "name": "Bestia Indomable",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana Impulso. - Esta Entidad gana +2 HP.",
+  "B": {
+   "pow": 4,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-084",
+  "name": "Gólem de Musgo",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "La primera vez por turno que esta Entidad recibe 2 o más Daño por combate y sobrevive, puedes Sanar 1 a esta Entidad.",
+  "B": {
+   "pow": 4,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Cuando esta Entidad Estabiliza, puedes mover una Entidad Gaia Flexible aliada entre tu Frente y Soporte."
+  }
+ },
+ {
+  "code": "AIO-CE-085",
+  "name": "Aprendiz de Fundición",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 0,
+  "kw": [],
+  "text": "Activa — Una vez por turno: Esta Entidad gana +1 POW este turno. Al final del turno, recibe 1 Daño. La primera vez por turno que esta Entidad recibiría daño de tus propios efectos, reduce ese daño en 1.",
+  "B": {
+   "pow": 3,
+   "hp": 4,
+   "sync": 0,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Activa — Una vez por turno: Esta Entidad gana +1 POW este turno. Al final del turno, recibe 1 Daño. La primera vez por turno que esta Entidad recibe daño, roba 1 carta."
+  }
+ },
+ {
+  "code": "AIO-CE-086",
+  "name": "Obrero de Metal",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 0,
+  "kw": [],
+  "text": "Entrada — Si controlas un Ancla Forja, mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 3,
+   "hp": 4,
+   "sync": 0,
+   "kw": [],
+   "text": "Cuando juegas un Ancla Forja, esta Entidad gana +2 POW este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-087",
+  "name": "Guardia del Horno",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Roba 1 carta.",
+  "B": {
+   "pow": 5,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "La primera vez por turno que esta Entidad recibiría daño de un efecto aliado, reduce ese daño en 1."
+  }
+ },
+ {
+  "code": "AIO-CE-088",
+  "name": "Soldado Blindado",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes hacer que esta Entidad reciba 1 Daño. Si lo haces, Sanar 1 a otra Entidad Forja.",
+  "B": {
+   "pow": 5,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes Sanar 1 a una Entidad Forja."
+  }
+ },
+ {
+  "code": "AIO-CE-089",
+  "name": "Acólito del Tiempo",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 1,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 3,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad Estabiliza, mira la carta superior de tu mazo. Puedes ponerla en el fondo. Luego roba 1 carta."
+  }
+ },
+ {
+  "code": "AIO-CE-090",
+  "name": "Estudiante de las Eras",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 1,
+  "sync": 1,
+  "kw": [],
+  "text": "La primera vez por turno que juegas una Directiva, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 3,
+   "hp": 3,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando juegas una Directiva, esta Entidad gana +1 HP este turno. Límite 1 vez por turno."
+  }
+ },
+ {
+  "code": "AIO-CE-091",
+  "name": "Guardia de la Torre",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Las Directivas enemigas que elijan esta Entidad cuestan 1 Aether adicional.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "La primera vez por turno que una Directiva enemiga elija una Entidad aliada, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-092",
+  "name": "Caballero del Reloj",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Una vez por turno, cuando juegas una Directiva, esta Entidad gana +1 POW este turno.",
+  "B": {
+   "pow": 4,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-093",
+  "name": "Eco Residual",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Envía la carta superior de tu mazo al Vacío.",
+  "B": {
+   "pow": 1,
+   "hp": 4,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad Estabiliza, puedes poner 1 carta de tu Vacío en el fondo de tu mazo. Si pusiste una carta en el fondo de tu mazo de esta forma, elige hasta 1 Entidad enemiga. Recibe 1 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-094",
+  "name": "Espíritu del Vacío",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "La primera vez por turno que una carta sea enviada de tu mazo al Vacío, esta Entidad gana +1 POW este turno. Luego, puedes elegir 1 Entidad enemiga no Token que no esté dañada. Esa Entidad recibe 1 Daño.",
+  "B": {
+   "pow": 2,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad ataca, si la defensora está dañada, gana +2 POW este combate."
+  }
+ },
+ {
+  "code": "AIO-CE-095",
+  "name": "Abismo Menor",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Entrada — Puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, elige una Entidad enemiga. Si no está dañada, recibe 1 Daño. Si está dañada, recibe 2 Daño",
+  "B": {
+   "pow": 2,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Al inicio de tu turno, puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-096",
+  "name": "Horrores del Espacio",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 5,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, si la defensora está dañada, gana +2 POW este combate.",
+  "B": {
+   "pow": 4,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, elige una Entidad enemiga. Si no está dañada, recibe 1 Daño. Si está dañada, recibe 2 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-097",
+  "name": "Munición Perforante",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad aliada. Gana +2 POW este turno. Si la Entidad elegida ataca a una Entidad con Baluarte este turno, gana +1 POW adicional durante ese combate. Timeline Bonus — Si el oponente controla una Entidad con Baluarte: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-098",
+  "name": "Seraphina Aegis, Ícono Celestial",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "baluarte",
+   "aereo"
+  ],
+  "text": "La primera vez por turno que otra Entidad Solaris aliada con Baluarte recibe Daño por combate, reduce ese daño en 1.",
+  "B": {
+   "pow": 6,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "baluarte",
+    "aereo"
+   ],
+   "text": "La primera vez por turno que otra Entidad Solaris aliada con Baluarte fuera a ser destruida, puedes Sanar 1 a esa Entidad antes de verificar destrucción. Si lo haces, Seraphina recibe 1 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-099",
+  "name": "Bodhisattva, Reina Asceta",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 7,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Crea 1 Token Brote en tu Frente. - Coloca la carta superior de tu mazo boca abajo en tu Timeline agotada.",
+  "B": {
+   "pow": 6,
+   "hp": 9,
+   "sync": 1,
+   "kw": [
+    "mutar",
+    "baluarte"
+   ],
+   "text": "La primera vez por turno que activas Mutar de una Entidad Gaia aliada de coste 3 o menos, puedes elegir una opción adicional de esa misma carta. No puedes elegir una opción que cree Tokens si ya creaste un Token este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-100",
+  "name": "Rust, Princesa Mecánica",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 6,
+  "sync": 0,
+  "kw": [],
+  "text": "La primera vez por turno que una Entidad Forja aliada recibe Daño, elige una Entidad enemiga. La Entidad elegida recibe 1 Daño. Activa — Una vez por turno: Elige otra Entidad Forja aliada. Gana +1 POW este turno",
+  "B": {
+   "pow": 7,
+   "hp": 7,
+   "sync": 0,
+   "kw": [
+    "impacto"
+   ],
+   "text": "La primera vez por turno que una Entidad Forja aliada recibe Daño, puedes Sanar 1 a esa Entidad. Si lo haces, elige una Entidad enemiga. La Entidad elegida recibe 1 Daño. Activa — Una vez por turno: Elige otra Entidad Forja aliada. Gana +1 POW este turno"
+  }
+ },
+ {
+  "code": "AIO-CE-101",
+  "name": "Mirai, Momento Eterno",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 6,
+  "sync": 1,
+  "kw": [],
+  "text": "Una vez por turno, cuando resuelves una Directiva, puedes pagar 1 Aether. Si lo haces, mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 5,
+   "hp": 7,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que resuelves una Directiva, puedes pagar 1 Aether. Si lo haces, devuelve esa Directiva al fondo de tu mazo en lugar de enviarla al Vacío."
+  }
+ },
+ {
+  "code": "AIO-CE-102",
+  "name": "Yami, Oscuridad Encarnada",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 10,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Esta Entidad no puede atacar mientras no tengas 8 o más cartas en tu Vacío. Al inicio de tu turno, puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, elige una Entidad enemiga. Si no está dañada, recibe 1 Daño. Si está dañada, recibe 2 Daño.",
+  "B": {
+   "pow": 7,
+   "hp": 10,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes enviar las 2 cartas superiores de tu mazo al Vacío. Si lo haces, elige hasta 2 Entidades enemigas. Cada una recibe 1 Daño. Las Entidades dañadas reciben 1 Daño adicional."
+  }
+ },
+ {
+  "code": "AIO-CE-103",
+  "name": "Vacuna Genética",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad con Mutar. Pierde sus habilidades y Keywords hasta el final del turno. Si esa Entidad está dañada, recibe 1 Daño. Timeline Bonus — Si controlas una Entidad con Baluarte: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-104",
+  "name": "Firewall Cuántico",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Hasta el inicio de tu próximo turno, tus cartas en el Timeline no pueden recibir Glitch. Timeline Bonus — Si una carta aliada ya tenía Glitch: Remueve Glitch de hasta 1 carta aliada."
+ },
+ {
+  "code": "AIO-CE-105",
+  "name": "Enfriamiento de Emergencia",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad enemiga. Pierde todos los aumentos temporales de POW hasta el final del turno. Si esa Entidad es Forja, recibe 1 Daño."
+ },
+ {
+  "code": "AIO-CE-106",
+  "name": "Script Antimagia",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Reacción — Cuando el oponente juega una Directiva de coste 1: Cancela esa Directiva. Va al Vacío sin resolverse. Timeline Bonus — Si el oponente jugó 2 o más Directivas este turno: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-107",
+  "name": "Muralla de Iones Divina",
+  "fac": "Imperio Solaris",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Reacción — Al declararse un Ataque enemigo: Una Entidad Solaris aliada gana Baluarte este turno. Si ya tenía Baluarte, Sanar 1 a esa Entidad. Timeline Bonus — Si controlas una Entidad Solaris Ascendida: Remueve Glitch de hasta 1 carta aliada."
+ },
+ {
+  "code": "AIO-CE-108",
+  "name": "Troyano Letal",
+  "fac": "Sindicato Neón",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Destruye 1 Ancla enemiga de coste 2 o menos. Si no puedes, roba 1 carta. Timeline Bonus — Si controlas una Entidad Neón: Aplica Glitch a 1 Entidad enemiga agotada."
+ },
+ {
+  "code": "AIO-CE-109",
+  "name": "Plaga Devolutiva",
+  "fac": "Vacío Estelar",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad enemiga. Si está dañada, pierde sus keywords hasta el final del turno. Luego recibe 1 Daño. Timeline Bonus — Si controlas una Entidad del Vacío: Puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, la Entidad elegida recibe 1 Daño adicional."
+ },
+ {
+  "code": "AIO-CE-110",
+  "name": "Capitana de la Vanguardia Veloz",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, gana +1 POW este combate.",
+  "B": {
+   "pow": 4,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "aereo"
+   ],
+   "text": "Cuando esta Entidad ataca, si la defensora está en Soporte, recibe 1 Daño después del combate."
+  }
+ },
+ {
+  "code": "AIO-CE-111",
+  "name": "Proxy Fantasma",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Crea 1 Token Proxy Desechable en tu Frente.",
+  "B": {
+   "pow": 2,
+   "hp": 4,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que un Token aliado sea destruido, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-112",
+  "name": "Brote Mutágeno",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Crea 1 Token Brote Mutado en tu Frente. - Descarta 1 carta. Si lo haces, roba 1 carta.",
+  "B": {
+   "pow": 4,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "mutar"
+   ],
+   "text": "Mutar — Elige una: - Esta Entidad gana +2 HP. - Una Entidad Gaia aliada gana +1 POW este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-113",
+  "name": "Ingeniera de Calor",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Roba 1 carta.",
+  "B": {
+   "pow": 4,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que una Entidad Forja aliada recibiría daño de un efecto aliado, reduce ese daño en 1."
+  }
+ },
+ {
+  "code": "AIO-CE-114",
+  "name": "Aprendiz del Futuro",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Una vez por turno, después de mirar la carta superior de tu mazo por un efecto aliado, esta Entidad gana +1 HP este turno.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que miras la carta superior de tu mazo por un efecto aliado, puedes poner esa carta en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-115",
+  "name": "Eco del Nexo",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Activa — Una vez por turno: Envía la carta superior de tu mazo al Vacío. Esta Entidad gana +1 POW este turno por cada 3 cartas en tu Vacío. Máximo +3 POW. Luego, si esta Entidad tiene 3 o más POW, puedes elegir 1 Entidad enemiga no Token que no esté dañada. La Entidad elegida recibe 1 Daño.",
+  "B": {
+   "pow": 3,
+   "hp": 7,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, gana +1 POW este combate por cada 4 cartas en tu Vacío. Máximo +4 POW."
+  }
+ },
+ {
+  "code": "AIO-CE-116",
+  "name": "Kaelen, El Nexo Infinito",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 5,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Mira las 3 cartas superiores de tu mazo. Pon una en la parte superior y las demás en el fondo en cualquier orden. Activa — Paga 1 Aether y agota esta Entidad: Mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 4,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "aereo"
+   ],
+   "text": "Cuando esta Entidad ataca, mira las 2 cartas superiores de tu mazo. Pon una en la parte superior y la otra en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-117",
+  "name": "Nara, La Presente Imposible",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 6,
+  "sync": 1,
+  "kw": [
+   "glitch"
+  ],
+  "text": "Reacción — Una vez por turno, cuando el oponente aplica Glitch a una carta aliada: Puedes pagar 1 Aether. Si lo haces, remueve Glitch de esa carta y aplica Glitch a 1 Entidad enemiga agotada.",
+  "B": {
+   "pow": 4,
+   "hp": 7,
+   "sync": 1,
+   "kw": [
+    "glitch"
+   ],
+   "text": "La primera vez por turno que remueves Glitch de una carta aliada, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-118",
+  "name": "Rizoma Expansivo",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana +1 POW y +1 HP. - Esta Entidad gana Impacto este turno.",
+  "B": {
+   "pow": 4,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-119",
+  "name": "Ensamblador de Bombas",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes hacer que esta Entidad reciba 1 Daño. Si lo haces, crea 1 Token Chatarra Explosiva en tu Soporte.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes destruir 1 Ancla Token aliada. Si lo haces, elige una Entidad enemiga. Si está agotada, recibe 2 Daño. Si está preparada, recibe 1 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-120",
+  "name": "Recuperador de Ecos",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Una vez por turno, cuando resuelves una Directiva, esta Entidad gana +1 POW y +1 HP este turno.",
+  "B": {
+   "pow": 4,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Activa — Agota esta Entidad: Elige 1 Directiva de coste 2 o menos en tu Vacío. Puedes ponerla en el fondo de tu mazo."
+  }
+ },
+ {
+  "code": "AIO-CE-121",
+  "name": "Yui, Diva Holografica",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "glitch"
+  ],
+  "text": "Entrada — Aplica Glitch a 1 Entidad enemiga agotada. Si no puedes, roba 1 carta. Una vez por turno, cuando una Entidad enemiga recibe Glitch, mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 6,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "glitch",
+    "impacto"
+   ],
+   "text": "La primera vez por turno que una Entidad enemiga recibe Glitch, puedes aplicar Glitch a otra Entidad enemiga agotada. Cuando esta Entidad destruye una Entidad en combate, roba 1 carta."
+  }
+ },
+ {
+  "code": "AIO-CE-122",
+  "name": "Materia Inquieta",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 1,
+  "sync": 1,
+  "kw": [],
+  "text": "Si esta Entidad es destruida, puedes elegir 1 carta Estelar de coste 3 o menos de tu Vacío y ponerla en el fondo de tu mazo.",
+  "B": {
+   "pow": 5,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-123",
+  "name": "Cosechadora Menor",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Roba 1 carta.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que una Entidad enemiga es destruida, puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, roba 1 carta. Si la Entidad destruida estaba dañada, elige hasta 1 Entidad enemiga. Recibe 1 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-124",
+  "name": "Devorador de Recuerdos",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, si la defensora está dañada, gana +2 POW este combate.",
+  "B": {
+   "pow": 5,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes poner 1 carta de tu Vacío en el fondo de tu mazo."
+  }
+ },
+ {
+  "code": "AIO-CE-125",
+  "name": "Cosechadora Eones",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Si esta Entidad es destruida, puedes poner hasta 2 cartas de tu Vacío en el fondo de tu mazo en cualquier orden.",
+  "B": {
+   "pow": 4,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por partida que fueras a perder por Paradoja, en lugar de eso pon hasta 3 cartas de tu Vacío en el fondo de tu mazo y envía esta Entidad al Vacío."
+  }
+ },
+ {
+  "code": "AIO-CE-126",
+  "name": "Edicto de Disipación",
+  "fac": "Imperio Solaris",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Destruye 1 Ancla enemiga. Timeline Bonus — Si controlas una Entidad Solaris con Baluarte: Sanar 1 a una Entidad Solaris."
+ },
+ {
+  "code": "AIO-CE-127",
+  "name": "Fanática de Yui",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 1,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "Cuando esta Entidad Estabiliza, mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 3,
+   "hp": 2,
+   "sync": 1,
+   "kw": [
+    "impulso",
+    "glitch"
+   ],
+   "text": "Cuando esta Entidad Estabiliza, puedes aplicar Glitch a 1 Entidad enemiga agotada."
+  }
+ },
+ {
+  "code": "AIO-CE-128",
+  "name": "Reciclador de Núcleos",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 0,
+  "kw": [],
+  "text": "Si esta Entidad es destruida, puedes elegir 1 carta Forja de coste 1 en tu Vacío y ponerla en el fondo de tu mazo.",
+  "B": {
+   "pow": 3,
+   "hp": 3,
+   "sync": 0,
+   "kw": [],
+   "text": "Cuando juegas una carta Forja, esta Entidad gana +1 POW este turno. Límite 1 vez por turno."
+  }
+ },
+ {
+  "code": "AIO-CE-129",
+  "name": "Guardián de Calderas",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "La primera vez por turno que otra Entidad Forja aliada recibiría Daño, reduce ese daño en 1.",
+  "B": {
+   "pow": 5,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "La primera vez por turno que una Entidad Forja aliada recibe Daño, esa Entidad gana +1 POW este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-130",
+  "name": "Corrección de Paradoja",
+  "fac": "Cónclave Aether",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Reacción — Cuando el oponente juega una Entidad de coste 2 o menos: Cancela esa Entidad. Va al Vacío sin entrar al campo. Timeline Bonus — Si controlas una Entidad Cónclave: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-131",
+  "name": "Discípula de Mirai",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 3,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que resuelves una Directiva Cónclave, puedes Sanar 1 a esta Entidad o robar 1 carta."
+  }
+ },
+ {
+  "code": "AIO-CE-132",
+  "name": "Impulso Primigenio",
+  "fac": "Dinastía Gaia",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad aliada. Gana +2 POW este turno. Si esa Entidad tiene Mutar, Sanar 1 a esa Entidad."
+ },
+ {
+  "code": "AIO-CE-133",
+  "name": "Fervor del Alba",
+  "fac": "Imperio Solaris",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad Solaris aliada. Gana +1 POW este turno. Si tiene Baluarte, Sanar 1 a esa Entidad. Luego roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-134",
+  "name": "Contrabandista del Vacío",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes descartar 1 carta. Si lo haces, roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-135",
+  "name": "Hackeo Neuronal",
+  "fac": "Sindicato Neón",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad Neón aliada. Gana +2 POW este turno. Al final del turno, si esa Entidad está agotada, puedes aplicar Glitch a esa Entidad. Si lo haces, roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-136",
+  "name": "Reset Protocolo ZERO",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Todas las Entidades reciben 3 Daño. Luego destruye todas las Anclas Token."
+ },
+ {
+  "code": "AIO-CE-137",
+  "name": "Disruptor de Estática",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Remueve Glitch de hasta 1 carta aliada. Si no tienes ninguna carta con Glitch, agota una Entidad enemiga y aplicale Glitch."
+ },
+ {
+  "code": "AIO-CE-138",
+  "name": "Eco de Purga",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Remueve Glitch de hasta 1 carta aliada. Timeline Bonus — Si controlas una Entidad con Baluarte: Sanar 1 a una Entidad aliada."
+ },
+ {
+  "code": "AIO-CE-139",
+  "name": "Supervisor Criogénico",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Activa — Agota esta Entidad: Sanar 1 a una Entidad Forja dañada. Si no hay ninguna, mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 5,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "La primera vez por turno que Sanas una Entidad Forja, esa Entidad gana +1 POW este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-140",
+  "name": "Ancla Temporal",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad aliada de coste 3 o menos. Esa Entidad gana +1 POW y +1 HP este turno. Si esa Entidad está en Lado A y aún no cumple su condición de Ascensión este turno, puedes Ascenderla inmediatamente."
+ },
+ {
+  "code": "AIO-CE-141",
+  "name": "Archivista Temporal",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Una vez por turno, después de mirar la carta superior de tu mazo por un efecto aliado, puedes remover Glitch de hasta 1 carta aliada.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que remueves Glitch de una carta aliada, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-142",
+  "name": "Rizoma Purificador",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana +1 POW y +1 HP. - Remueve Glitch de hasta 1 carta aliada.",
+  "B": {
+   "pow": 4,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad Estabiliza, puedes remover Glitch de hasta 1 carta aliada. Si removiste Glitch de esta forma, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-143",
+  "name": "Purga Dimensional",
+  "fac": "Vacío Estelar",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Remueve Glitch de hasta 1 carta aliada. Timeline Bonus — Si controlas una Entidad del Vacío: Puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, remueve Glitch de hasta 1 carta aliada adicional."
+ },
+ {
+  "code": "AIO-CE-144",
+  "name": "Ludópata del Aether",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Sanar 1 a una Entidad aliada."
+ },
+ {
+  "code": "AIO-CE-145",
+  "name": "Cañón de Estática Pulsante",
+  "fac": "Neutral",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Activa — Paga 1 Aether, agota y destruye esta Ancla: Elige una Entidad enemiga. Pierde Baluarte hasta el final del turno y recibe 1 Daño."
+ },
+ {
+  "code": "AIO-CE-146",
+  "name": "Bastión Móvil Modelo Jericó",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 6,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Esta Entidad no puede ser movida por efectos enemigos mientras esté preparada.",
+  "B": {
+   "pow": 4,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "La primera vez por turno que esta Entidad fuera a ser devuelta a la mano o movida por un efecto enemigo, ignora ese efecto."
+  }
+ },
+ {
+  "code": "AIO-CE-147",
+  "name": "Formación de Emergencia",
+  "fac": "Imperio Solaris",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Crea 1 Token Escudero de Luz en tu Frente. Timeline Bonus — Si controlas una Entidad Solaris: Ese Token gana Baluarte este turno."
+ },
+ {
+  "code": "AIO-CE-148",
+  "name": "Arquitecto de la Ciudadela",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Al final de tu turno, si una Entidad Solaris aliada con Baluarte recibió Daño este turno, puedes Sanar 1 a esa Entidad.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que Sanas una Entidad Solaris aliada, esa Entidad gana +1 HP este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-149",
+  "name": "Campana de Toque de Queda",
+  "fac": "Imperio Solaris",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Continuo — Las Entidades enemigas de coste 1 no pueden atacar el mismo turno en que entran al campo. Activa — Paga 1 Aether, agota y destruye esta Ancla: Una Entidad Solaris aliada gana Baluarte este turno."
+ },
+ {
+  "code": "AIO-CE-150",
+  "name": "Ronin de Holo-Camuflaje",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "Cuando esta Entidad entra al Frente desde el Soporte, gana +1 POW este turno.",
+  "B": {
+   "pow": 4,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes mover esta Entidad al Soporte si hay espacio."
+  }
+ },
+ {
+  "code": "AIO-CE-151",
+  "name": "Saqueador de Caché",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "glitch"
+  ],
+  "text": "Entrada — Si una Entidad enemiga tiene Glitch, genera 1 Aether temporal este turno.",
+  "B": {
+   "pow": 4,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "glitch"
+   ],
+   "text": "La primera vez por turno que una Entidad enemiga no se endereza por Glitch, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-152",
+  "name": "Hacker de Flujo de Datos",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "glitch"
+  ],
+  "text": "Esta Entidad gana +1 POW durante tu turno si una Entidad enemiga tiene Glitch.",
+  "B": {
+   "pow": 4,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "glitch"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes aplicar Glitch a 1 Entidad enemiga agotada."
+  }
+ },
+ {
+  "code": "AIO-CE-153",
+  "name": "Kitsune Cibernética Proyecto Nueve",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 5,
+  "sync": 1,
+  "kw": [],
+  "text": "Tus Entidades Neón que entran al Frente desde el Soporte ganan +1 POW este turno.",
+  "B": {
+   "pow": 6,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "glitch"
+   ],
+   "text": "La primera Entidad enemiga que entra al campo durante el turno del oponente entra agotada."
+  }
+ },
+ {
+  "code": "AIO-CE-154",
+  "name": "Lanzador de Espinas",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, si la defensora tiene Aéreo, gana +2 POW este combate.",
+  "B": {
+   "pow": 2,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Cuando una Entidad con Aéreo ataca a esta Entidad, la Entidad atacante recibe 1 Daño después del combate."
+  }
+ },
+ {
+  "code": "AIO-CE-155",
+  "name": "Gorila Quimérico Proyecto Kong",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana +2 POW este turno. - Esta Entidad gana Baluarte este turno.",
+  "B": {
+   "pow": 7,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Tus otras Entidades Gaia que atacan a Entidades dañadas ganan +1 POW durante ese combate."
+  }
+ },
+ {
+  "code": "AIO-CE-156",
+  "name": "Crecimiento Desmedido",
+  "fac": "Dinastía Gaia",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Coloca la carta superior de tu mazo boca abajo en tu Timeline agotada. Sanar 1 a una Entidad Gaia aliada."
+ },
+ {
+  "code": "AIO-CE-157",
+  "name": "Raíces Profundas",
+  "fac": "Dinastía Gaia",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Activa — Agota esta Ancla: Mira la carta superior de tu mazo. Puedes ponerla en el fondo. Si controlas una Entidad Gaia Ascendida, puedes Sanar 1 a una Entidad Gaia."
+ },
+ {
+  "code": "AIO-CE-158",
+  "name": "Autómata Básico",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes mover una Entidad enemiga agotada del Soporte al Frente si hay espacio.",
+  "B": {
+   "pow": 4,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Tus Entidades Forja en el Frente tienen: “Cuando esta Entidad ataca, puedes hacer que reciba 1 Daño después del combate. Si lo haces, gana +1 POW este combate.”"
+  }
+ },
+ {
+  "code": "AIO-CE-159",
+  "name": "Reactor Inestable G-0",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 8,
+  "sync": 1,
+  "kw": [],
+  "text": "Al inicio de tu turno, esta Entidad recibe 1 Daño. Luego, elige una Entidad enemiga. Si está agotada, recibe 1 Daño. Si está preparada, recibe 2 Daño solo si esta Entidad ha recibido 3 o más Daño.",
+  "B": {
+   "pow": 7,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes destruir 1 Ancla Token aliada. Si lo haces, esta Entidad gana +3 POW este combate."
+  }
+ },
+ {
+  "code": "AIO-CE-160",
+  "name": "Barón Ferrous, Corazón de Hierro",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 7,
+  "sync": 0,
+  "kw": [],
+  "text": "La primera vez por turno que una Entidad Forja aliada fuera a ser destruida por daño de un efecto aliado, en lugar de eso queda en el campo con Daño igual a su HP menos 1.",
+  "B": {
+   "pow": 8,
+   "hp": 9,
+   "sync": 0,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Activa — Una vez por turno: Elige una Entidad Forja aliada dañada. Esa Entidad recibe 1 Daño. Si sobrevive, una Entidad enemiga recibe 2 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-161",
+  "name": "Válvula de Alivio Térmico",
+  "fac": "Forja de Hierro",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Una vez por turno, cuando una Entidad Forja aliada reciba Daño, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo. Activa — Agota esta Ancla: Sanar 1 a una Entidad Forja dañada."
+ },
+ {
+  "code": "AIO-CE-162",
+  "name": "Gólem de Prisma Arcano",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 6,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Las Directivas enemigas que elijan esta Entidad cuestan 1 Aether adicional.",
+  "B": {
+   "pow": 3,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "La primera vez por turno que una Directiva enemiga elija esta Entidad, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-163",
+  "name": "Caminante de la Grieta",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 6,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, mira las 2 cartas superiores de tu mazo. Pon una arriba y la otra en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-164",
+  "name": "Astrólogo Solon, El Vidente",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 6,
+  "sync": 1,
+  "kw": [],
+  "text": "Juegas con la carta superior de tu mazo revelada. Una vez por turno, puedes jugar una carta Cónclave desde la parte superior de tu mazo sin pagar su coste.",
+  "B": {
+   "pow": 6,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "aereo"
+   ],
+   "text": "Cuando esta Entidad Asciende, elige hasta 1 Entidad enemiga. Si está agotada, ponla en el fondo del mazo de su dueño. Si está preparada, recibe 2 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-165",
+  "name": "Estasis Cronológica",
+  "fac": "Cónclave Aether",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Roba 1 carta. Luego aplica Glitch a 1 Entidad enemiga agotada. Timeline Bonus — Si controlas una Entidad Cónclave: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-166",
+  "name": "Sacerdote de la Entropía",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Puedes destruir otra Entidad aliada. Si lo haces, roba 1 carta y luego descarta 1 carta.",
+  "B": {
+   "pow": 5,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Las Entidades enemigas agotadas en el Frente tienen -1 POW. Activa — Agota esta Entidad y envía la carta superior de tu mazo al Vacío: Crea 1 Token Horror en tu Frente."
+  }
+ },
+ {
+  "code": "AIO-CE-167",
+  "name": "Engendro Dimensional, El Kraken",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 7,
+  "sync": 1,
+  "kw": [],
+  "text": "Jugar esta Entidad cuesta 1 Aether menos si tienes 8 o más cartas en tu Vacío.",
+  "B": {
+   "pow": 8,
+   "hp": 9,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad enemiga en combate, puedes exiliar esa Entidad en lugar de enviarla al Vacío. Si lo haces, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-168",
+  "name": "Xul-Than, La Estrella Muerta",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 10,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Esta Entidad no puede atacar mientras tengas menos de 10 cartas en tu Vacío. Al final de tu turno, puedes enviar las 2 cartas superiores de tu mazo al Vacío. Si lo haces, cada Entidad enemiga en el Frente recibe 1 Daño. Si no hay Entidades enemigas en el Frente, elige hasta 1 Entidad enemiga en el Soporte. Recibe 1 Daño.",
+  "B": {
+   "pow": 9,
+   "hp": 10,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes elegir 1 carta de coste 3 o menos en tu Vacío y ponerla en el fondo de tu mazo. Si lo haces, elige una Entidad enemiga. Si no está dañada, recibe 1 Daño. Si está dañada, recibe 2 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-169",
+  "name": "Lámpara Vacía",
+  "fac": "Vacío Estelar",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Una vez por turno, cuando una carta sea enviada de tu mazo al Vacío por un efecto aliado, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo. Activa — Agota y destruye esta Ancla: Pon 1 Entidad de coste 1 de tu Vacío en tu Frente agotada. Luego, elige hasta 1 Entidad enemiga. Recibe 1 Daño."
+ },
+ {
+  "code": "AIO-CE-170",
+  "name": "Oficial de Enlace Táctico",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Mientras controles otra Entidad Solaris preparada en el Frente, esta Entidad gana +1 POW durante tu turno.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "La primera vez por turno que otra Entidad Solaris aliada Asciende, puedes Sanar 1 a esa Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-171",
+  "name": "Alineación Orbital",
+  "fac": "Imperio Solaris",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Sanar 2 a una Entidad Solaris aliada. Si esa Entidad tiene Baluarte, gana +1 HP este turno. Timeline Bonus — Si controlas una Entidad Solaris Ascendida: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-172",
+  "name": "Lord Solaria, Voz del Amanecer",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 6,
+  "sync": 1,
+  "kw": [
+   "baluarte",
+   "aereo"
+  ],
+  "text": "Tus otras Entidades Solaris con Baluarte en el Frente tienen +1 HP. La primera vez por turno que otra Entidad Solaris aliada con Baluarte recibe Daño por combate, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 7,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "baluarte",
+    "aereo"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes crear 1 Token Escudero de Luz en tu Frente. Si no puedes crearlo por falta de espacio, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-173",
+  "name": "General Valerius, Can del Alba",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 4,
+  "hp": 6,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "La primera vez por turno que una Entidad Solaris aliada con Baluarte recibe Daño y sobrevive, esa Entidad gana +1 POW este turno.",
+  "B": {
+   "pow": 5,
+   "hp": 7,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "La primera vez por turno, durante tu turno, que Sanas una Entidad Solaris aliada, elige hasta 1 Entidad enemiga agotada. Esa Entidad recibe 1 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-174",
+  "name": "Moto-Tanque Yakuza",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "Entrada — Puedes mover una Entidad enemiga agotada de coste 2 o menos entre Frente y Soporte si hay espacio.",
+  "B": {
+   "pow": 7,
+   "hp": 6,
+   "sync": 1,
+   "kw": [
+    "glitch"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes aplicar Glitch a 1 Entidad enemiga agotada. Si esa Entidad enemiga ya tenía Glitch, esta Entidad gana +1 POW este combate."
+  }
+ },
+ {
+  "code": "AIO-CE-175",
+  "name": "Malware Infection",
+  "fac": "Sindicato Neón",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad Neón aliada. Gana +1 POW este turno. Si ataca a una Entidad dañada este turno, gana +1 POW adicional durante ese combate. Timeline Bonus — Si controlas una Entidad con Glitch: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-176",
+  "name": "Reroute Neural",
+  "fac": "Sindicato Neón",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Mira las 2 cartas superiores de tu mazo. Pon una en la parte superior y la otra en el fondo. Luego roba 1 carta y descarta 1 carta. Timeline Bonus — Si controlas una Entidad Neón: Puedes poner ambas en cualquier orden en la parte superior o fondo."
+ },
+ {
+  "code": "AIO-CE-177",
+  "name": "@Runner, Cazador de Avatares",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "impulso"
+  ],
+  "text": "Cuando esta Entidad destruye una Entidad en combate, puedes aplicar Glitch a 1 Entidad enemiga agotada.",
+  "B": {
+   "pow": 4,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "impulso",
+    "glitch"
+   ],
+   "text": "Cuando esta Entidad ataca, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo. Si una Entidad enemiga tiene Glitch, esta Entidad gana +1 POW este combate."
+  }
+ },
+ {
+  "code": "AIO-CE-178",
+  "name": "Maceta de Cultivo",
+  "fac": "Dinastía Gaia",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Al final de tu turno, si una Entidad Gaia aliada activó Mutar este turno, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo. Luego, si esa Entidad está dañada, puedes Sanar 1 a esa Entidad. Si no puedes, roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-179",
+  "name": "Omnia, Matriarca del ADN",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 8,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Entrada — Puedes activar Mutar de 1 Entidad Gaia aliada.",
+  "B": {
+   "pow": 8,
+   "hp": 10,
+   "sync": 1,
+   "kw": [
+    "mutar"
+   ],
+   "text": "La primera vez por turno que activas Mutar de una Entidad Gaia aliada, esa Entidad gana +1 HP este turno. Activa — Agota esta Entidad: Activa Mutar de 1 Entidad Gaia aliada."
+  }
+ },
+ {
+  "code": "AIO-CE-180",
+  "name": "Recolectora de Savia",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Sanar 1 a otra Entidad Gaia. - Genera 1 Aether temporal este turno. Activa solo si controlas otra Entidad Gaia.",
+  "B": {
+   "pow": 2,
+   "hp": 4,
+   "sync": 1,
+   "kw": [],
+   "text": "Al final de tu turno, si activaste Mutar este turno, Sanar 1 a una Entidad Gaia aliada."
+  }
+ },
+ {
+  "code": "AIO-CE-181",
+  "name": "Tardígrado de la Espesura",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 5,
+  "sync": 1,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Esta Entidad no puede atacar.",
+  "B": {
+   "pow": 2,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Esta Entidad no puede atacar si no está dañada. La primera vez por turno que esta Entidad recibe Daño y sobrevive, puedes Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-182",
+  "name": "Niño de las Cenizas",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 0,
+  "kw": [],
+  "text": "Cuando un Ancla aliada es destruida, mira la carta superior de tu mazo. Puedes ponerla en el fondo. Al final de tu turno, una Entidad Forja aliada gana Impacto.",
+  "B": {
+   "pow": 2,
+   "hp": 3,
+   "sync": 0,
+   "kw": [],
+   "text": "Cuando juegas un carta Forja, esta Entidad gana +2 POW este turno. La primera vez por turno que un Ancla aliada es destruida, roba 1 carta."
+  }
+ },
+ {
+  "code": "AIO-CE-183",
+  "name": "Enfermera de Quemados",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Activa — Agota esta Entidad: Sanar 1 a una Entidad Forja. Luego roba 1 carta.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Activa — Agota esta Entidad: Sanar 2 a una Entidad Forja. Luego roba 1 carta."
+  }
+ },
+ {
+  "code": "AIO-CE-184",
+  "name": "Cantina del Minero",
+  "fac": "Forja de Hierro",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Al inicio de tu turno, si controlas una Entidad Forja agotada, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo. Activa — Descarta 1 carta y destruye esta Ancla: Endereza 1 Entidad Forja aliada que atacó este turno. Esa Entidad no puede atacar de nuevo este turno."
+ },
+ {
+  "code": "AIO-CE-185",
+  "name": "Trak, Jefe de Motores",
+  "fac": "Forja de Hierro",
+  "cls": "Entidad",
+  "pow": 5,
+  "hp": 4,
+  "sync": 0,
+  "kw": [
+   "impulso"
+  ],
+  "text": "La primera vez por turno que una Entidad Forja aliada recibe Daño, reduce ese daño en 1.",
+  "B": {
+   "pow": 7,
+   "hp": 6,
+   "sync": 0,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad ataca, gana +1 POW este combate por cada Entidad Forja aliada agotada. Máximo +3 POW."
+  }
+ },
+ {
+  "code": "AIO-CE-186",
+  "name": "Reloj de Arena Aetherium",
+  "fac": "Cónclave Aether",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "La primera Entidad Cónclave sin texto de reglas que juegas cada turno cuesta 1 Aether menos. Activa — Agota esta Ancla: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-187",
+  "name": "Reflejo del Observador",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Mira la carta superior de tu mazo. Puedes ponerla en el fondo. Si pusiste esa carta en el fondo, una Entidad aliada gana +1 HP este turno.",
+  "B": {
+   "pow": 4,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que miras la carta superior de tu mazo por un efecto aliado, elige una: Sanar 1 a una Entidad aliada. Remueve Glitch de hasta 1 carta aliada."
+  }
+ },
+ {
+  "code": "AIO-CE-188",
+  "name": "Refugiado Temporal",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Las Directivas enemigas que elijan esta Entidad cuestan 1 Aether adicional.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad Asciende, mira las 2 cartas superiores de tu mazo. Pon una arriba y la otra en el fondo. Luego roba 1 carta. Las Directivas enemigas que elijan esta Entidad cuestan 1 Aether adicional."
+  }
+ },
+ {
+  "code": "AIO-CE-189",
+  "name": "Elyra, Líder de las Mareas",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 5,
+  "sync": 1,
+  "kw": [],
+  "text": "La primera vez por turno que miras la carta superior de tu mazo por un efecto aliado, puedes pagar 1 Aether. Si lo haces, prepara 1 carta agotada de tu Timeline.",
+  "B": {
+   "pow": 4,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "Cuando esta Entidad Asciende, mira la carta superior de tu mazo. Puedes ponerla en el fondo. La primera vez por turno que preparas una carta de tu Timeline por un efecto aliado, una Entidad aliada gana +1 HP este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-190",
+  "name": "Pesar",
+  "fac": "Vacío Estelar",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Elige una Entidad enemiga. La Entidad elegida obtiene -1 POW este turno. Luego, si no está dañada, recibe 1 Daño. Si está dañada, recibe 2 Daño."
+ },
+ {
+  "code": "AIO-CE-191",
+  "name": "Fragmento Exógeno de Vida",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "La primera vez por turno que una carta es enviada de tu mazo al Vacío, esta Entidad gana +2 POW este turno. Luego, puedes elegir hasta 1 Entidad enemiga no Token que no esté dañada. La Entidad elegida recibe 1 Daño.",
+  "B": {
+   "pow": 4,
+   "hp": 5,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "La primera vez por turno que fueras a enviar cartas de tu mazo al Vacío por un efecto aliado, puedes enviar 1 carta menos. Si lo haces, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-192",
+  "name": "Perro Sombrío Callejero",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, si la defensora no está dañada, recibe 1 Daño antes del daño de combate. Si la Entidad defensora si está dañada, esta Entidad gana +1 POW este combate.",
+  "B": {
+   "pow": 3,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes Sanar 1 a esta Entidad. Si esta Entidad es destruida, puedes devolver 1 carta de tu Vacío a tu mano."
+  }
+ },
+ {
+  "code": "AIO-CE-193",
+  "name": "Semilla de Equilibrio",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Esta Entidad gana +2 POW este turno. - Esta Entidad gana Baluarte este turno.",
+  "B": {
+   "pow": 3,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "Al inicio de tu turno, elige una keyword entre Baluarte, Aéreo, Impacto, Glitch o Mutar presente en una Entidad enemiga. Esta Entidad gana esa keyword hasta el final del turno."
+  }
+ },
+ {
+  "code": "AIO-CE-194",
+  "name": "Estabilizador Anti-Glitch",
+  "fac": "Neutral",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Continuo — Tus cartas en el Timeline no pueden recibir Glitch. Activa — Agota y destruye esta Ancla: Remueve Glitch de hasta 2 cartas aliadas."
+ },
+ {
+  "code": "AIO-CE-195",
+  "name": "Caravana de Refugiados",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 5,
+  "sync": 1,
+  "kw": [],
+  "text": "Al final de tu turno, puedes descartar 1 carta. Si lo haces, elige una Entidad aliada. Sanar 1 a esa Entidad. Si esa Entidad no está dañada, mira la carta superior de tu mazo. Puedes ponerla en el fondo. Si descartaste una carta de esta forma y tienes 2 o menos cartas en mano, roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-196",
+  "name": "Faro Sensor de Realidad",
+  "fac": "Imperio Solaris",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Continuo — Las Entidades enemigas en Soporte no pueden ganar Aéreo. Activa — Paga 1 Aether, agota y destruye esta Ancla: Mueve 1 Entidad enemiga Flexible agotada del Soporte al Frente si hay espacio."
+ },
+ {
+  "code": "AIO-CE-197",
+  "name": "Peregrina del Alba",
+  "fac": "Imperio Solaris",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Si el oponente controla más Entidades que tú, Sanar 1 a una Entidad Solaris aliada.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que una Entidad Solaris aliada recibe Daño y sobrevive, genera 1 Aether temporal durante tu próximo turno."
+  }
+ },
+ {
+  "code": "AIO-CE-198",
+  "name": "Vendedor de Holo-Fideos",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [],
+  "text": "Activa — Agota esta Entidad: Genera 1 Aether temporal este turno. El oponente mira la carta superior de su mazo y puede ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Activa — Agota esta Entidad: Genera 1 Aether temporal este turno. Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-199",
+  "name": "Adicto al Net-Stream",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 2,
+  "sync": 1,
+  "kw": [
+   "glitch"
+  ],
+  "text": "Al inicio de tu turno, puedes aplicar Glitch a una carta agotada. Si lo haces, roba 1 carta y luego descarta 1 carta.",
+  "B": {
+   "pow": 2,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "glitch"
+   ],
+   "text": "Al final de tu turno, puedes aplicar Glitch a 1 Entidad enemiga agotada. La primera vez por turno que aplicas Glitch a una Entidad por un efecto aliado, roba 1 carta y luego descarta 1 carta."
+  }
+ },
+ {
+  "code": "AIO-CE-200",
+  "name": "Técnico de Fibra Óptica",
+  "fac": "Sindicato Neón",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Remueve Glitch de hasta 1 carta aliada. Si removiste Glitch de una Entidad Neón, esa Entidad gana +1 HP este turno.",
+  "B": {
+   "pow": 3,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que remueves Glitch de una carta aliada, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-201",
+  "name": "Canción de Cuna del Bosque",
+  "fac": "Dinastía Gaia",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Hasta el inicio de tu próximo turno, las Entidades enemigas con POW 5 o más no pueden declarar ataques. Timeline Bonus — Si controlas una Entidad Gaia: Mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+ },
+ {
+  "code": "AIO-CE-202",
+  "name": "Los Swami, Tríada de la Vida",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 7,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Una Entidad Token aliada gana +1 HP este turno. - Sanar 1 a una Entidad Token aliada.",
+  "B": {
+   "pow": 5,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "mutar"
+   ],
+   "text": "Al inicio de tu turno, si controlas un Token, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-203",
+  "name": "Recolectora de Savia Mayor",
+  "fac": "Dinastía Gaia",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 3,
+  "sync": 1,
+  "kw": [
+   "mutar"
+  ],
+  "text": "Mutar — Elige una: - Sanar 1 a otra Entidad Gaia. - Mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que Sanas una Entidad Gaia, esa Entidad gana +1 HP este turno."
+  }
+ },
+ {
+  "code": "AIO-CE-204",
+  "name": "Cantina de Cenizas",
+  "fac": "Forja de Hierro",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Al inicio de tu turno, si controlas una Entidad Forja agotada, elige una Entidad Forja. Sanar 1 a esa Entidad. Si no está dañada, mira la carta superior de tu mazo. Puedes ponerla en el fondo. Activa — Descarta 1 carta y destruye esta Ancla: Una Entidad Forja aliada gana +2 POW este turno. Al final del turno, recibe 1 Daño."
+ },
+ {
+  "code": "AIO-CE-205",
+  "name": "Gafas de Cronista",
+  "fac": "Cónclave Aether",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Activa — Agota esta Ancla: Mira las 2 cartas superiores de tu mazo y devuélvelas en el mismo orden."
+ },
+ {
+  "code": "AIO-CE-206",
+  "name": "Refugiado de la Paradoja",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 0,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Si tienes 5 o más cartas en tu Timeline, mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 5,
+   "sync": 1,
+   "kw": [],
+   "text": "Las Directivas enemigas que elijan esta Entidad cuestan 1 Aether adicional."
+  }
+ },
+ {
+  "code": "AIO-CE-207",
+  "name": "Cronista del Arbitraje",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 5,
+  "sync": 1,
+  "kw": [],
+  "text": "Una vez por turno, cuando un jugador juega su cuarta carta durante un turno, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que el oponente juega su tercera carta durante un turno, elige una: Mira la carta superior de tu mazo. Puedes ponerla en el fondo. Una Entidad enemiga recibe 1 Daño."
+  }
+ },
+ {
+  "code": "AIO-CE-208",
+  "name": "Null, Paladín del Abismo",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 3,
+  "hp": 6,
+  "sync": 1,
+  "kw": [],
+  "text": "Reacción — Una vez por turno, cuando una Entidad aliada con Mutar es destruida: Puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, una Entidad enemiga recibe 1 Daño.",
+  "B": {
+   "pow": 5,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Al inicio de tu turno, puedes activar Mutar de una Entidad Gaia aliada. Si lo haces, envía la carta superior de tu mazo al Vacío."
+  }
+ },
+ {
+  "code": "AIO-CE-209",
+  "name": "Perro Sombrío Alfa",
+  "fac": "Vacío Estelar",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Cuando esta Entidad ataca, si la defensora no está dañada, recibe 1 Daño antes del daño de combate. Si la Entidad defensora está dañada, esta Entidad gana +1 POW este combate.",
+  "B": {
+   "pow": 4,
+   "hp": 3,
+   "sync": 1,
+   "kw": [
+    "impacto"
+   ],
+   "text": "Cuando esta Entidad destruye una Entidad en combate, puedes enviar la carta superior de tu mazo al Vacío. Si lo haces, Sanar 1 a esta Entidad."
+  }
+ },
+ {
+  "code": "AIO-CE-210",
+  "name": "Maddie, La Chica Perdida",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 6,
+  "sync": 1,
+  "kw": [],
+  "text": "Activa — Una vez por turno: Mueve esta Entidad entre tu Frente y Soporte. Si se movió al Frente, gana Impulso este turno. Si se movió al Soporte, Sanar 1 a esta Entidad.",
+  "B": {
+   "pow": 4,
+   "hp": 8,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera vez por turno que una Entidad aliada se mueve entre Frente y Soporte, mira la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-CE-211",
+  "name": "El Maravilloso Mago de Wonderia",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 2,
+  "hp": 7,
+  "sync": 1,
+  "kw": [],
+  "text": "Activa — Paga 1 Aether y agota esta Entidad: Mira la carta superior de tu mazo. Puedes ponerla en el fondo. Si la dejaste arriba, genera 1 Aether temporal este turno.",
+  "B": {
+   "pow": 4,
+   "hp": 8,
+   "sync": 1,
+   "kw": [
+    "aereo"
+   ],
+   "text": "La primera vez por turno que miras la carta superior de tu mazo por un efecto aliado, puedes Sanar 1 a una Entidad aliada."
+  }
+ },
+ {
+  "code": "AIO-CE-212",
+  "name": "Recalibración de Timeline",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Roba 1 carta. Puedes colocar 1 carta de tu mano boca abajo en tu Timeline agotada. Esta acción no cuenta como tu carga de Timeline del turno."
+ },
+ {
+  "code": "AIO-CE-213",
+  "name": "Último Recurso",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Roba 1 carta. Si tienes 2 o menos cartas en mano después de resolver este efecto, roba 1 carta adicional."
+ },
+ {
+  "code": "AIO-CE-214",
+  "name": "Plan de Contingencia",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Mira las 2 cartas superiores de tu mazo. Pon una en la parte superior y la otra en el fondo. Timeline Bonus — Si tienes 4 o más cartas en tu Timeline: Roba 1 carta."
+ },
+ {
+  "code": "AIO-CE-215",
+  "name": "Mercado de Eones Abierto",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Cada jugador roba 1 carta. Luego, si tienes menos cartas en mano que el oponente, roba 1 carta adicional."
+ },
+ {
+  "code": "AIO-APS-001",
+  "name": "Cloud y Cake, Ladrones Peludos",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 0,
+  "kw": [
+   "baluarte"
+  ],
+  "text": "Entrada — Elige 1 Ancla enemiga. Hasta el inicio de tu próximo turno, esa Ancla pierde sus habilidades Activa.",
+  "B": {
+   "pow": 2,
+   "hp": 4,
+   "sync": 1,
+   "kw": [
+    "baluarte"
+   ],
+   "text": "Al inicio de tu turno, puedes mirar la carta superior de tu mazo. Puedes ponerla en el fondo."
+  }
+ },
+ {
+  "code": "AIO-APS-002",
+  "name": "Cosplayer Aficionado",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 1,
+  "sync": 0,
+  "kw": [],
+  "text": "Entrada — Elige una Entidad Legendaria aliada. Esta Entidad gana una keyword impresa de esa Entidad hasta el final del turno.",
+  "B": {
+   "pow": 2,
+   "hp": 2,
+   "sync": 0,
+   "kw": [],
+   "text": "Mientras esta Entidad esté preparada en el Frente, las Entidades Legendarias aliadas tienen +1 HP."
+  }
+ },
+ {
+  "code": "AIO-APS-003",
+  "name": "Moneda Conmemorativa del Colapso",
+  "fac": "Neutral",
+  "cls": "Ancla",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Activa — Agota esta Ancla: Revela la carta superior de tu mazo. Si su coste es par, mira la carta superior de tu mazo. Puedes ponerla en el fondo. Si su coste es impar, genera 1 Aether temporal este turno."
+ },
+ {
+  "code": "AIO-APS-004",
+  "name": "El Globo de Maddie",
+  "fac": "Neutral",
+  "cls": "Directiva",
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": "Mira las 2 cartas superiores de tu mazo. Pon una en la parte superior y la otra en el fondo. Si la carta que dejaste arriba es una Entidad, Sanar 1 a una Entidad aliada. Exilia esta Directiva después de resolverse."
+ },
+ {
+  "code": "AIO-APS-005",
+  "name": "Gran Árbitro del Cónclave",
+  "fac": "Cónclave Aether",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 4,
+  "sync": 1,
+  "kw": [],
+  "text": "Continuo — Ningún jugador puede jugar más de 4 cartas durante un mismo turno.",
+  "B": {
+   "pow": 2,
+   "hp": 6,
+   "sync": 1,
+   "kw": [],
+   "text": "Las cartas exiliadas no pueden ser puestas en la mano por efectos."
+  }
+ },
+ {
+  "code": "AIO-APS-006",
+  "name": "Maddie de las Zapatillas Rojas",
+  "fac": "Neutral",
+  "cls": "Entidad",
+  "pow": 1,
+  "hp": 2,
+  "sync": 1,
+  "kw": [],
+  "text": "Entrada — Mira la carta superior de tu mazo. Puedes ponerla en el fondo.",
+  "B": {
+   "pow": 2,
+   "hp": 3,
+   "sync": 1,
+   "kw": [],
+   "text": "La primera Entidad Neutral que juegas cada turno cuesta 1 Aether menos. No puede reducir su coste por debajo de 1."
+  }
+ },
+ {
+  "code": "AIO-CE-102",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-168",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-099",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-155",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-098",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-173",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-100",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-160",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-185",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-212",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-213",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-214",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-215",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-056",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-084",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-146",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-171",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-164",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-207",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-169",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-190",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-018",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-109",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-066",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-040",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-182",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-183",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-204",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-043",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-070",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ },
+ {
+  "code": "AIO-CE-195",
+  "name": null,
+  "fac": null,
+  "cls": null,
+  "pow": null,
+  "hp": null,
+  "sync": null,
+  "kw": [],
+  "text": ""
+ }
+]
